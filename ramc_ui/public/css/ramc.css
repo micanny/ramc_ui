@@ -1,0 +1,750 @@
+/*!
+ * RAMC UI Theme - Aviation-Grade ERP Interface
+ * Regional Aircraft Maintenance Centre - Premium Corporate Theme
+ * Author: RAMC Development Team
+ * Version: 1.0.0
+ * Description: Professional aviation-inspired theme with cockpit precision
+ */
+
+/* ======================================
+   RAMC THEME ROOT VARIABLES
+   ====================================== */
+
+[data-theme="ramc"] {
+  /* === PRIMARY AVIATION PALETTE === */
+  --primary: #004080;           /* Deep Aviation Navy Blue */
+  --primary-light: #336baa;     /* Lighter aviation blue */
+  --primary-dark: #002654;      /* Darker navy for depth */
+  
+  /* === ACCENT COLORS === */
+  --accent: #FFD700;            /* Aviation Gold */
+  --accent-light: #fff4b3;     /* Light gold wash */
+  --accent-dark: #cc9600;      /* Darker gold for hover states */
+  
+  /* === NEUTRAL COCKPIT PALETTE === */
+  --neutral-100: #ffffff;       /* Pure white */
+  --neutral-200: #f8f9fa;      /* Off-white */
+  --neutral-300: #E5E5E5;      /* Light metallic gray */
+  --neutral-400: #c1c7cd;      /* Medium gray */
+  --neutral-500: #8d9498;      /* Cockpit instrument gray */
+  --neutral-600: #5e6366;      /* Dark instrument gray */
+  --neutral-700: #3c4043;      /* Charcoal */
+  --neutral-800: #1C1C1C;      /* Cockpit black */
+  --neutral-900: #000000;      /* Pure black */
+  
+  /* === SEMANTIC COLORS === */
+  --success: #28a745;          /* Aviation green (operational) */
+  --warning: #ffc107;          /* Caution yellow */
+  --danger: #dc3545;           /* Alert red */
+  --info: #17a2b8;            /* Info cyan */
+  
+  /* === BACKGROUND & SURFACE === */
+  --bg-color: var(--neutral-100);
+  --surface-color: var(--neutral-200);
+  --card-bg: var(--neutral-100);
+  --sidebar-bg: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 100%);
+  --navbar-bg: var(--primary);
+  
+  /* === TEXT COLORS === */
+  --text-color: var(--neutral-800);
+  --text-muted: var(--neutral-500);
+  --text-light: var(--neutral-400);
+  --heading-color: var(--primary-dark);
+  
+  /* === INTERACTIVE ELEMENTS === */
+  --link-color: var(--primary);
+  --link-hover-color: var(--accent-dark);
+  --border-color: var(--neutral-300);
+  --focus-color: var(--accent);
+  --hover-bg: rgba(255, 215, 0, 0.1);
+  
+  /* === SHADOWS & DEPTH === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  
+  /* === TYPOGRAPHY === */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* === SPACING & SIZING === */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* ======================================
+   GLOBAL OVERRIDES & BASE STYLES
+   ====================================== */
+
+[data-theme="ramc"] body {
+  font-family: var(--font-family-primary);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======================================
+   MODULE ICONS ENHANCEMENT
+   ====================================== */
+
+/* Module Icons Enhancement */
+[data-theme="ramc"] .module-card .module-icon {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* ======================================
+   NAVIGATION & SIDEBAR
+   ====================================== */
+
+/* Top Navbar */
+[data-theme="ramc"] .navbar {
+  background: var(--navbar-bg) !important;
+  border-bottom: 2px solid var(--accent);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="ramc"] .navbar .navbar-nav .nav-link {
+  color: var(--neutral-100) !important;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-fast);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-sm);
+}
+
+[data-theme="ramc"] .navbar .navbar-nav .nav-link:hover {
+  background-color: rgba(255, 215, 0, 0.15);
+  color: var(--accent) !important;
+  transform: translateY(-1px);
+}
+
+/* Sidebar */
+[data-theme="ramc"] .desk-sidebar {
+  background: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="ramc"] .desk-sidebar .sidebar-item {
+  margin: 4px 8px;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-normal);
+}
+
+[data-theme="ramc"] .desk-sidebar .sidebar-item:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="ramc"] .desk-sidebar .sidebar-item.selected {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="ramc"] .desk-sidebar .sidebar-item a {
+  color: var(--neutral-100);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+[data-theme="ramc"] .desk-sidebar .sidebar-item.selected a {
+  color: var(--primary-dark);
+}
+
+/* ======================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ====================================== */
+
+/* Primary Buttons */
+[data-theme="ramc"] .btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border: 1px solid var(--primary-dark);
+  color: var(--neutral-100);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="ramc"] .btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+[data-theme="ramc"] .btn-primary:focus,
+[data-theme="ramc"] .btn-primary.focus {
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+/* Secondary Buttons */
+[data-theme="ramc"] .btn-secondary {
+  background: var(--neutral-200);
+  border: 1px solid var(--border-color);
+  color: var(--primary);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-normal);
+}
+
+[data-theme="ramc"] .btn-secondary:hover {
+  background: var(--hover-bg);
+  border-color: var(--accent);
+  color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Success Buttons */
+[data-theme="ramc"] .btn-success {
+  background: var(--success);
+  border-color: var(--success);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Warning & Danger Buttons */
+[data-theme="ramc"] .btn-warning {
+  background: var(--warning);
+  border-color: var(--warning);
+  color: var(--neutral-800);
+  font-weight: var(--font-weight-semibold);
+}
+
+[data-theme="ramc"] .btn-danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ======================================
+   FORMS & INPUT ELEMENTS
+   ====================================== */
+
+/* Form Controls */
+[data-theme="ramc"] .form-control {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background-color: var(--neutral-100);
+  color: var(--text-color);
+  font-weight: var(--font-weight-normal);
+  transition: var(--transition-fast);
+  padding: 0.75rem 1rem;
+}
+
+[data-theme="ramc"] .form-control:focus {
+  border-color: var(--focus-color);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+  background-color: var(--neutral-100);
+}
+
+/* Form Labels */
+[data-theme="ramc"] .control-label,
+[data-theme="ramc"] .form-label {
+  color: var(--primary-dark);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Required Field Indicator */
+[data-theme="ramc"] .control-label.reqd::after,
+[data-theme="ramc"] .form-label.reqd::after {
+  color: var(--danger);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ======================================
+   CARDS & CONTAINERS
+   ====================================== */
+
+/* Main Card Containers */
+[data-theme="ramc"] .card,
+[data-theme="ramc"] .frappe-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+[data-theme="ramc"] .card:hover,
+[data-theme="ramc"] .frappe-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+/* Card Headers */
+[data-theme="ramc"] .card-header {
+  background: linear-gradient(90deg, var(--neutral-200), var(--neutral-100));
+  border-bottom: 2px solid var(--accent);
+  color: var(--primary-dark);
+  font-weight: var(--font-weight-semibold);
+  padding: 1rem 1.5rem;
+}
+
+/* Module Cards */
+[data-theme="ramc"] .module-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+[data-theme="ramc"] .module-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/* ======================================
+   TABLES & DATA DISPLAY
+   ====================================== */
+
+/* Data Tables */
+[data-theme="ramc"] .table {
+  background-color: var(--card-bg);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="ramc"] .table thead th {
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: var(--neutral-100);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="ramc"] .table tbody tr {
+  transition: var(--transition-fast);
+}
+
+[data-theme="ramc"] .table tbody tr:hover {
+  background-color: var(--hover-bg);
+}
+
+[data-theme="ramc"] .table tbody td {
+  border-top: 1px solid var(--border-color);
+  padding: 0.875rem 1rem;
+  vertical-align: middle;
+}
+
+/* List Views */
+[data-theme="ramc"] .list-row {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 0.5rem;
+  transition: var(--transition-fast);
+  background-color: var(--card-bg);
+}
+
+[data-theme="ramc"] .list-row:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ======================================
+   MODALS & DIALOGS
+   ====================================== */
+
+[data-theme="ramc"] .modal-content {
+  border: none;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+[data-theme="ramc"] .modal-header {
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: var(--neutral-100);
+  border-bottom: 2px solid var(--accent);
+  padding: 1.5rem;
+}
+
+[data-theme="ramc"] .modal-title {
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.25rem;
+}
+
+[data-theme="ramc"] .modal-body {
+  padding: 2rem;
+  background-color: var(--card-bg);
+}
+
+[data-theme="ramc"] .modal-footer {
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+/* ======================================
+   ALERTS & NOTIFICATIONS
+   ====================================== */
+
+[data-theme="ramc"] .alert {
+  border: none;
+  border-radius: var(--border-radius-md);
+  border-left: 4px solid;
+  font-weight: var(--font-weight-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="ramc"] .alert-success {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--success);
+  border-left-color: var(--success);
+}
+
+[data-theme="ramc"] .alert-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #856404;
+  border-left-color: var(--warning);
+}
+
+[data-theme="ramc"] .alert-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--danger);
+  border-left-color: var(--danger);
+}
+
+[data-theme="ramc"] .alert-info {
+  background-color: rgba(23, 162, 184, 0.1);
+  color: var(--info);
+  border-left-color: var(--info);
+}
+
+/* ======================================
+   BADGES & INDICATORS
+   ====================================== */
+
+[data-theme="ramc"] .badge {
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.75rem;
+  border-radius: var(--border-radius-sm);
+  padding: 0.4em 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="ramc"] .badge-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--neutral-100);
+}
+
+[data-theme="ramc"] .badge-success {
+  background-color: var(--success);
+}
+
+[data-theme="ramc"] .badge-warning {
+  background-color: var(--warning);
+  color: var(--neutral-800);
+}
+
+[data-theme="ramc"] .badge-danger {
+  background-color: var(--danger);
+}
+
+/* ======================================
+   PROGRESS INDICATORS
+   ====================================== */
+
+[data-theme="ramc"] .progress {
+  height: 8px;
+  background-color: var(--neutral-300);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="ramc"] .progress-bar {
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  transition: width 0.6s ease;
+  box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+/* ======================================
+   TABS & NAVIGATION
+   ====================================== */
+
+[data-theme="ramc"] .nav-tabs {
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="ramc"] .nav-tabs .nav-item .nav-link {
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 1rem 1.5rem;
+  transition: var(--transition-fast);
+}
+
+[data-theme="ramc"] .nav-tabs .nav-item .nav-link:hover {
+  color: var(--primary);
+  border-bottom-color: var(--accent);
+  background-color: var(--hover-bg);
+}
+
+[data-theme="ramc"] .nav-tabs .nav-item .nav-link.active {
+  color: var(--primary-dark);
+  font-weight: var(--font-weight-semibold);
+  border-bottom-color: var(--accent);
+  background-color: transparent;
+}
+
+/* ======================================
+   DROPDOWNS
+   ====================================== */
+
+[data-theme="ramc"] .dropdown-menu {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--card-bg);
+  padding: 0.5rem 0;
+}
+
+[data-theme="ramc"] .dropdown-item {
+  color: var(--text-color);
+  font-weight: var(--font-weight-normal);
+  padding: 0.75rem 1.5rem;
+  transition: var(--transition-fast);
+}
+
+[data-theme="ramc"] .dropdown-item:hover {
+  background-color: var(--hover-bg);
+  color: var(--primary-dark);
+}
+
+[data-theme="ramc"] .dropdown-item.active {
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: var(--neutral-100);
+}
+
+/* ======================================
+   SCROLLBARS (Webkit)
+   ====================================== */
+
+[data-theme="ramc"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme="ramc"] ::-webkit-scrollbar-track {
+  background: var(--neutral-200);
+  border-radius: var(--border-radius-sm);
+}
+
+[data-theme="ramc"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-light), var(--primary));
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-fast);
+}
+
+[data-theme="ramc"] ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-dark), var(--accent));
+}
+
+/* ======================================
+   LOGIN PAGE ENHANCEMENTS
+   ====================================== */
+
+[data-theme="ramc"] .for-login {
+  background: linear-gradient(135deg, var(--neutral-200) 0%, var(--neutral-300) 100%);
+  min-height: 100vh;
+}
+
+[data-theme="ramc"] .login-content {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 3rem;
+  margin: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="ramc"] .login-content .login-logo {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+[data-theme="ramc"] .login-content h4 {
+  color: var(--primary-dark);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+   ====================================== */
+
+@media (max-width: 768px) {
+  [data-theme="ramc"] .navbar-brand img {
+    max-height: 28px;
+  }
+  
+  [data-theme="ramc"] .login-content {
+    margin: 1rem;
+    padding: 2rem;
+  }
+  
+  [data-theme="ramc"] .modal-body {
+    padding: 1.5rem;
+  }
+  
+  [data-theme="ramc"] .card-header {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ======================================
+   PRINT STYLES
+   ====================================== */
+
+@media print {
+  [data-theme="ramc"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #cccccc;
+  }
+  
+  [data-theme="ramc"] .navbar,
+  [data-theme="ramc"] .desk-sidebar,
+  [data-theme="ramc"] .btn,
+  [data-theme="ramc"] .modal {
+    display: none !important;
+  }
+}
+
+/* ======================================
+   ACCESSIBILITY ENHANCEMENTS
+   ====================================== */
+
+[data-theme="ramc"] :focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+[data-theme="ramc"] .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  [data-theme="ramc"] {
+    --border-color: #000000;
+    --text-color: #000000;
+    --bg-color: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="ramc"] *,
+  [data-theme="ramc"] *::before,
+  [data-theme="ramc"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ======================================
+   CUSTOM AVIATION-SPECIFIC ELEMENTS
+   ====================================== */
+
+/* Maintenance Module Enhancements */
+[data-theme="ramc"] .module-card[data-module="Maintenance"] {
+  background: linear-gradient(135deg, var(--accent-light), var(--neutral-100));
+  border: 2px solid var(--accent);
+}
+
+[data-theme="ramc"] .module-card[data-module="Projects"] {
+  background: linear-gradient(135deg, var(--primary-light), var(--neutral-100));
+  border: 2px solid var(--primary);
+}
+
+/* Status Indicators for Aircraft */
+[data-theme="ramc"] .aircraft-status-operational {
+  color: var(--success);
+  font-weight: var(--font-weight-semibold);
+}
+
+[data-theme="ramc"] .aircraft-status-maintenance {
+  color: var(--warning);
+  font-weight: var(--font-weight-semibold);
+}
+
+[data-theme="ramc"] .aircraft-status-grounded {
+  color: var(--danger);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Aviation Gold Accent Elements */
+[data-theme="ramc"] .aviation-highlight {
+  background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+}
+
+/* Cockpit-style Information Panels */
+[data-theme="ramc"] .cockpit-panel {
+  background: var(--neutral-800);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  font-weight: var(--font-weight-medium);
+  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.1);
+}
+
+/* ======================================
+   END OF RAMC AVIATION THEME
+   ====================================== */

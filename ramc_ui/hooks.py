@@ -1,9 +1,9 @@
 app_name = "ramc_ui"
-app_title = "Ramc Ui"
-app_publisher = "recorner"
-app_description = "Ramc Ui "
+app_title = "RAMC UI Theme"
+app_publisher = "RAMC Development Team"
+app_description = "Aviation-grade ERP interface theme for Regional Aircraft Maintenance Centre"
 app_email = "westronet@gmail.com"
-app_license = "mit"
+app_license = "MIT"
 
 # Apps
 # ------------------
@@ -11,22 +11,22 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "ramc_ui",
-# 		"logo": "/assets/ramc_ui/logo.png",
-# 		"title": "Ramc Ui",
-# 		"route": "/ramc_ui",
-# 		"has_permission": "ramc_ui.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "ramc_ui",
+		"logo": "/assets/ramc_ui/images/logos/ramc_main_light.png",
+		"title": "RAMC Aviation Theme",
+		"route": "/app",
+		"has_permission": "ramc_ui.api.permission.has_app_permission"
+	}
+]
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/ramc_ui/css/ramc_ui.css"
-# app_include_js = "/assets/ramc_ui/js/ramc_ui.js"
+app_include_css = ["/assets/ramc_ui/css/ramc.css"]
+app_include_js = ["/assets/ramc_ui/js/ramc.js"]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/ramc_ui/css/ramc_ui.css"
@@ -174,9 +174,9 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "ramc_ui.event.get_events"
-# }
+override_whitelisted_methods = {
+	"frappe.core.doctype.user.user.switch_theme": "ramc_ui.overrides.switch_theme.switch_theme"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
