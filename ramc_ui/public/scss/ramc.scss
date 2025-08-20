@@ -1,0 +1,131 @@
+/*!
+ * RAMC Aviation Theme - WORLD CLASS DESIGN
+ * Ultra Modern ERP Interface with Cool Purple & Gold
+ * Version: 3.0.0
+ */
+
+// Import cool components
+@import 'components/navbar';
+@import 'components/sidebar'; 
+@import 'components/cool-forms';
+
+// Global typography and base styles
+[data-theme="ramc"] {
+  // Base typography
+  body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: var(--surface-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  // Headings
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: var(--font-weight-semibold, 600);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1.1rem; }
+  h6 { font-size: 1rem; }
+  
+  // Links
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+    
+    &:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+  }
+  
+  // Selection
+  ::selection {
+    background: var(--primary);
+    color: white;
+  }
+  
+  // Scrollbars
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--surface-bg);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+    
+    &:hover {
+      background: var(--text-muted);
+    }
+  }
+  
+  // Aviation-specific enhancements
+  .aviation-status {
+    &.operational {
+      color: var(--success);
+      font-weight: var(--font-weight-semibold, 600);
+    }
+    
+    &.maintenance {
+      color: var(--warning);
+      font-weight: var(--font-weight-semibold, 600);
+    }
+    
+    &.grounded {
+      color: var(--danger);
+      font-weight: var(--font-weight-semibold, 600);
+    }
+  }
+  
+  // Maintenance priority indicators
+  .priority-high {
+    border-left: 4px solid var(--danger);
+    background: rgba(239, 68, 68, 0.05);
+  }
+  
+  .priority-medium {
+    border-left: 4px solid var(--warning);
+    background: rgba(245, 158, 11, 0.05);
+  }
+  
+  .priority-low {
+    border-left: 4px solid var(--info);
+    background: rgba(59, 130, 246, 0.05);
+  }
+}
+
+// Print styles
+@media print {
+  [data-theme="ramc"] {
+    * {
+      background: white !important;
+      color: black !important;
+    }
+  }
+}
+
+// Dark theme support (for future use)
+[data-theme="ramc-dark"] {
+  --bg-color: #{$ramc-gray-900};
+  --card-bg: #{$ramc-gray-800};
+  --surface-bg: #{$ramc-gray-800};
+  --text-color: #{$ramc-white};
+  --text-muted: #{$ramc-gray-400};
+  --heading-color: #{$ramc-white};
+  --border-color: #{$ramc-gray-700};
+  --hover-bg: #{$ramc-gray-700};
+}

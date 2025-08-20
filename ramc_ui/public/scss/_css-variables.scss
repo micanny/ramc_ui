@@ -1,0 +1,63 @@
+// RAMC Theme Root Variables
+// CSS Custom Properties for Runtime Theme Switching
+
+[data-theme="ramc"] {
+  // Primary Colors
+  --primary: #{$ramc-primary};
+  --primary-light: #{$ramc-primary-light};
+  --primary-dark: #{$ramc-primary-dark};
+  
+  // Accent Colors
+  --accent: #{$ramc-accent};
+  --accent-light: #{$ramc-accent-light};
+  --accent-dark: #{$ramc-accent-dark};
+  
+  // Background Colors
+  --bg-color: #{$ramc-white};
+  --card-bg: #{$ramc-white};
+  --surface-bg: #{$ramc-gray-50};
+  
+  // Text Colors - Black fonts for readability
+  --text-color: #{$ramc-black};
+  --text-muted: #{$ramc-gray-600};
+  --text-light: #{$ramc-gray-500};
+  --heading-color: #{$ramc-gray-900};
+  
+  // Border Colors
+  --border-color: #{$ramc-gray-200};
+  --border-dark: #{$ramc-gray-300};
+  
+  // Interactive Colors
+  --hover-bg: #{$ramc-gray-50};
+  --focus-color: #{$ramc-primary};
+  
+  // Semantic Colors
+  --success: #{$ramc-success};
+  --warning: #{$ramc-warning};
+  --danger: #{$ramc-danger};
+  --info: #{$ramc-info};
+  
+  // Typography
+  --font-family: #{$ramc-font-family};
+  
+  // Spacing
+  --spacing-xs: #{$ramc-spacing-xs};
+  --spacing-sm: #{$ramc-spacing-sm};
+  --spacing-md: #{$ramc-spacing-md};
+  --spacing-lg: #{$ramc-spacing-lg};
+  --spacing-xl: #{$ramc-spacing-xl};
+  
+  // Border Radius
+  --radius-sm: #{$ramc-radius-sm};
+  --radius-md: #{$ramc-radius-md};
+  --radius-lg: #{$ramc-radius-lg};
+  --radius-xl: #{$ramc-radius-xl};
+  
+  // Shadows
+  --shadow-sm: #{$ramc-shadow-sm};
+  --shadow-md: #{$ramc-shadow-md};
+  --shadow-lg: #{$ramc-shadow-lg};
+  
+  // Transitions
+  --transition: #{$ramc-transition};
+}

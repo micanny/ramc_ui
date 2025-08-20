@@ -1,0 +1,60 @@
+// RAMC Aviation Theme Variables
+// Clean colors that work perfectly with black fonts
+
+// Primary Aviation Colors - Clean and Professional
+$ramc-primary: #2563eb;           // Clean blue that works with black text
+$ramc-primary-light: #3b82f6;    // Lighter blue
+$ramc-primary-dark: #1d4ed8;     // Darker blue
+
+// Secondary Colors
+$ramc-accent: #f59e0b;           // Professional amber/gold
+$ramc-accent-light: #fbbf24;    // Light amber
+$ramc-accent-dark: #d97706;     // Dark amber
+
+// Neutral Colors - High Contrast for Readability
+$ramc-white: #ffffff;
+$ramc-gray-50: #f9fafb;
+$ramc-gray-100: #f3f4f6;
+$ramc-gray-200: #e5e7eb;
+$ramc-gray-300: #d1d5db;
+$ramc-gray-400: #9ca3af;
+$ramc-gray-500: #6b7280;
+$ramc-gray-600: #4b5563;
+$ramc-gray-700: #374151;
+$ramc-gray-800: #1f2937;
+$ramc-gray-900: #111827;
+$ramc-black: #000000;
+
+// Semantic Colors
+$ramc-success: #10b981;
+$ramc-warning: #f59e0b;
+$ramc-danger: #ef4444;
+$ramc-info: #3b82f6;
+
+// Typography
+$ramc-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$ramc-font-weight-normal: 400;
+$ramc-font-weight-medium: 500;
+$ramc-font-weight-semibold: 600;
+$ramc-font-weight-bold: 700;
+
+// Spacing
+$ramc-spacing-xs: 0.25rem;
+$ramc-spacing-sm: 0.5rem;
+$ramc-spacing-md: 1rem;
+$ramc-spacing-lg: 1.5rem;
+$ramc-spacing-xl: 2rem;
+
+// Border Radius
+$ramc-radius-sm: 0.25rem;
+$ramc-radius-md: 0.5rem;
+$ramc-radius-lg: 0.75rem;
+$ramc-radius-xl: 1rem;
+
+// Shadows
+$ramc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$ramc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$ramc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+// Transitions
+$ramc-transition: all 0.2s ease-in-out;

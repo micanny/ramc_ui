@@ -1,0 +1,34 @@
+// RAMC Sidebar - SUPER COOL DESIGN
+[data-theme="ramc"] {
+  .desk-sidebar {
+    background: linear-gradient(180deg, rgba(124, 58, 237, 0.05), rgba(245, 158, 11, 0.02)) !important;
+    border-right: 3px solid var(--accent);
+    backdrop-filter: blur(10px);
+    
+    .sidebar-item {
+      margin: 8px 16px;
+      border-radius: 15px;
+      transition: var(--transition);
+      font-weight: 500;
+      
+      &:hover {
+        background: linear-gradient(135deg, var(--accent-light), var(--accent));
+        color: var(--text-color);
+        transform: translateX(8px) scale(1.02);
+        box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+      }
+      
+      &.selected {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: white;
+        font-weight: 700;
+        transform: translateX(8px);
+        box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+        
+        a {
+          color: white !important;
+        }
+      }
+    }
+  }
+}

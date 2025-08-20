@@ -1,0 +1,128 @@
+// RAMC Aviation Buttons
+// Clean, modern button designs
+
+[data-theme="ramc"] {
+  .btn {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium, 500);
+    border-radius: var(--radius-md);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    cursor: pointer;
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    
+    &:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  
+  .btn-secondary {
+    background: var(--surface-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+    
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary);
+    }
+  }
+  
+  .btn-success {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+    
+    &:hover {
+      background: #059669;
+      transform: translateY(-1px);
+    }
+  }
+  
+  .btn-warning {
+    background: var(--warning);
+    border-color: var(--warning);
+    color: white;
+    
+    &:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+  }
+  
+  .btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: white;
+    
+    &:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+    }
+  }
+  
+  .btn-outline-primary {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+    
+    &:hover {
+      background: var(--primary);
+      color: white;
+    }
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  // Button groups
+  .btn-group {
+    .btn {
+      border-radius: 0;
+      
+      &:first-child {
+        border-radius: var(--radius-md) 0 0 var(--radius-md);
+      }
+      
+      &:last-child {
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      }
+    }
+  }
+  
+  // Icon buttons
+  .btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+  }
+}

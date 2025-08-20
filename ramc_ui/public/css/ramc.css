@@ -1,750 +1,977 @@
 /*!
- * RAMC UI Theme - Aviation-Grade ERP Interface
- * Regional Aircraft Maintenance Centre - Premium Corporate Theme
- * Author: RAMC Development Team
- * Version: 1.0.0
- * Description: Professional aviation-inspired theme with cockpit precision
+ * RAMC Aviation Theme - WORKING COMPLETE CSS
+ * Cool Modern Aviation Interface - FIXED VERSION
+ * Colors: Deep Purple & Gold Aviation Theme
  */
 
-/* ======================================
-   RAMC THEME ROOT VARIABLES
-   ====================================== */
+/*!
+ * RAMC Aviation Theme - ULTRA MODERN DESIGN
+ * Contemporary Tech-Inspired Interface
+ * Colors: Electric Blue, Neon Green & Dark Mode Vibes
+ */
 
 [data-theme="ramc"] {
-  /* === PRIMARY AVIATION PALETTE === */
-  --primary: #004080;           /* Deep Aviation Navy Blue */
-  --primary-light: #336baa;     /* Lighter aviation blue */
-  --primary-dark: #002654;      /* Darker navy for depth */
-  
-  /* === ACCENT COLORS === */
-  --accent: #FFD700;            /* Aviation Gold */
-  --accent-light: #fff4b3;     /* Light gold wash */
-  --accent-dark: #cc9600;      /* Darker gold for hover states */
-  
-  /* === NEUTRAL COCKPIT PALETTE === */
-  --neutral-100: #ffffff;       /* Pure white */
-  --neutral-200: #f8f9fa;      /* Off-white */
-  --neutral-300: #E5E5E5;      /* Light metallic gray */
-  --neutral-400: #c1c7cd;      /* Medium gray */
-  --neutral-500: #8d9498;      /* Cockpit instrument gray */
-  --neutral-600: #5e6366;      /* Dark instrument gray */
-  --neutral-700: #3c4043;      /* Charcoal */
-  --neutral-800: #1C1C1C;      /* Cockpit black */
-  --neutral-900: #000000;      /* Pure black */
-  
-  /* === SEMANTIC COLORS === */
-  --success: #28a745;          /* Aviation green (operational) */
-  --warning: #ffc107;          /* Caution yellow */
-  --danger: #dc3545;           /* Alert red */
-  --info: #17a2b8;            /* Info cyan */
-  
-  /* === BACKGROUND & SURFACE === */
-  --bg-color: var(--neutral-100);
-  --surface-color: var(--neutral-200);
-  --card-bg: var(--neutral-100);
-  --sidebar-bg: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 100%);
-  --navbar-bg: var(--primary);
-  
-  /* === TEXT COLORS === */
-  --text-color: var(--neutral-800);
-  --text-muted: var(--neutral-500);
-  --text-light: var(--neutral-400);
-  --heading-color: var(--primary-dark);
-  
-  /* === INTERACTIVE ELEMENTS === */
-  --link-color: var(--primary);
-  --link-hover-color: var(--accent-dark);
-  --border-color: var(--neutral-300);
-  --focus-color: var(--accent);
-  --hover-bg: rgba(255, 215, 0, 0.1);
-  
-  /* === SHADOWS & DEPTH === */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
-  
-  /* === TYPOGRAPHY === */
-  --font-family-primary: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  
-  /* === SPACING & SIZING === */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 12px;
-  --border-radius-xl: 16px;
-  
-  /* === TRANSITIONS === */
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 250ms ease-in-out;
-  --transition-slow: 350ms ease-in-out;
+	/* === ULTRA MODERN TECH PALETTE === */
+	--primary: #0ea5e9;          /* Electric Sky Blue */
+	--primary-light: #38bdf8;    /* Bright Cyan */
+	--primary-dark: #0284c7;     /* Deep Electric Blue */
+	
+	/* === NEON ACCENTS === */
+	--accent: #22c55e;           /* Neon Green */
+	--accent-light: #4ade80;     /* Bright Lime */
+	--accent-dark: #16a34a;      /* Forest Green */
+	
+	/* === MODERN DARK PALETTE === */
+	--gray-50: #fafafa;
+	--gray-100: #f4f4f5;
+	--gray-200: #e4e4e7;
+	--gray-300: #d1d5db;
+	--gray-400: #9ca3af;
+	--gray-500: #6b7280;
+	--gray-600: #4b5563;
+	--gray-700: #374151;
+	--gray-800: #1f2937;
+	--gray-900: #111827;
+	
+	/* === VIBRANT TEXT & BACKGROUNDS === */
+	--text-color: #111827;       /* Deep charcoal */
+	--text-muted: #6b7280;       /* Cool gray */
+	--heading-color: #1f2937;    /* Dark slate */
+	--bg-color: #ffffff;         /* Clean white */
+	--card-bg: #ffffff;
+	--surface-color: #f8fafc;    /* Cool white */
+	
+	/* === INTERACTIVE MODERN === */
+	--border-color: #e2e8f0;
+	--hover-bg: rgba(34, 197, 94, 0.1);  /* Neon green hover */
+	--focus-color: #22c55e;               /* Neon green focus */
+	
+	/* === MODERN EFFECTS === */
+	--shadow-modern: 0 8px 32px rgba(14, 165, 233, 0.2);
+	--shadow-neon: 0 0 20px rgba(34, 197, 94, 0.3);
+	--shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+	--border-radius: 16px;
+	--border-radius-sm: 8px;
+	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	
+	/* === GRADIENT BACKGROUNDS === */
+	--gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+	--gradient-accent: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+	--gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
 }
 
-/* ======================================
-   GLOBAL OVERRIDES & BASE STYLES
-   ====================================== */
+/* ================================================
+   GLOBAL FONT & BASE STYLES
+   ================================================ */
 
 [data-theme="ramc"] body {
-  font-family: var(--font-family-primary);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-weight: var(--font-weight-normal);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: "Inter", system-ui, sans-serif;
+	font-weight: 400;
+	color: var(--text-color);
+	background: var(--bg-color);
+	-webkit-font-smoothing: antialiased;
 }
 
-/* ======================================
-   MODULE ICONS ENHANCEMENT
-   ====================================== */
+/* ================================================
+   NAVBAR - COOL PURPLE & GOLD DESIGN
+   ================================================ */
 
-/* Module Icons Enhancement */
-[data-theme="ramc"] .module-card .module-icon {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary));
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
-}
-
-/* ======================================
-   NAVIGATION & SIDEBAR
-   ====================================== */
-
-/* Top Navbar */
 [data-theme="ramc"] .navbar {
-  background: var(--navbar-bg) !important;
-  border-bottom: 2px solid var(--accent);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(10px);
+	background: var(--gradient-primary) !important;
+	border-bottom: 3px solid var(--accent) !important;
+	backdrop-filter: blur(20px);
+	box-shadow: var(--shadow-modern);
+	padding: 1rem;
+	min-height: 70px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Add animated background effect */
+[data-theme="ramc"] .navbar::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	transition: left 2s ease-in-out;
+	pointer-events: none;
+}
+
+[data-theme="ramc"] .navbar:hover::before {
+	left: 100%;
+}
+
+[data-theme="ramc"] .navbar-brand img {
+	max-height: 40px !important;
+	filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+	transition: var(--transition);
+}
+
+[data-theme="ramc"] .navbar-brand img:hover {
+	transform: scale(1.1) rotate(2deg);
+	filter: brightness(0) invert(1) drop-shadow(0 0 15px rgba(34, 197, 94, 0.8));
 }
 
 [data-theme="ramc"] .navbar .navbar-nav .nav-link {
-  color: var(--neutral-100) !important;
-  font-weight: var(--font-weight-medium);
-  transition: var(--transition-fast);
-  padding: 0.75rem 1rem;
-  border-radius: var(--border-radius-sm);
+	color: white !important;
+	font-weight: 600;
+	margin: 0 8px;
+	padding: 12px 24px;
+	border-radius: var(--border-radius-sm);
+	transition: var(--transition);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 0.85rem;
+	position: relative;
+	overflow: hidden;
+}
+
+[data-theme="ramc"] .navbar .navbar-nav .nav-link::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: var(--gradient-accent);
+	transition: left 0.3s ease;
+	z-index: -1;
+}
+
+[data-theme="ramc"] .navbar .navbar-nav .nav-link:hover::before {
+	left: 0;
 }
 
 [data-theme="ramc"] .navbar .navbar-nav .nav-link:hover {
-  background-color: rgba(255, 215, 0, 0.15);
-  color: var(--accent) !important;
-  transform: translateY(-1px);
+	color: white !important;
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-neon);
 }
 
-/* Sidebar */
+/* ================================================
+   SIDEBAR - SLEEK & RESPONSIVE DESIGN
+   ================================================ */
+
+/* === SIDEBAR STYLING === */
 [data-theme="ramc"] .desk-sidebar {
-  background: var(--sidebar-bg) !important;
-  border-right: 1px solid var(--accent);
-  box-shadow: var(--shadow-lg);
+	background: var(--surface) !important;
+	border-right: 1px solid var(--border);
+	min-height: 100vh;
+	padding: 1rem 0;
+	position: relative;
+	overflow: hidden;
 }
 
-[data-theme="ramc"] .desk-sidebar .sidebar-item {
-  margin: 4px 8px;
-  border-radius: var(--border-radius-md);
-  transition: var(--transition-normal);
+/* Add animated grid background */
+[data-theme="ramc"] .desk-sidebar::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: 
+		linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+	background-size: 20px 20px;
+	pointer-events: none;
+	animation: grid-move 20s linear infinite;
 }
 
-[data-theme="ramc"] .desk-sidebar .sidebar-item:hover {
-  background-color: rgba(255, 215, 0, 0.2);
-  transform: translateX(3px);
-  box-shadow: var(--shadow-sm);
+@keyframes grid-move {
+	0% { transform: translate(0, 0); }
+	100% { transform: translate(20px, 20px); }
 }
 
-[data-theme="ramc"] .desk-sidebar .sidebar-item.selected {
-  background-color: var(--accent);
-  color: var(--primary-dark);
-  font-weight: var(--font-weight-semibold);
-  box-shadow: var(--shadow-md);
+[data-theme="ramc"] .sidebar-item {
+	margin: 6px 12px;
+	border-radius: var(--border-radius-lg);
+	transition: var(--transition);
+	position: relative;
+	overflow: hidden;
 }
 
-[data-theme="ramc"] .desk-sidebar .sidebar-item a {
-  color: var(--neutral-100);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
+[data-theme="ramc"] .sidebar-item::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: var(--gradient-primary);
+	transition: left 0.4s ease;
+	z-index: -1;
 }
 
-[data-theme="ramc"] .desk-sidebar .sidebar-item.selected a {
-  color: var(--primary-dark);
+[data-theme="ramc"] .sidebar-item:hover::before {
+	left: 0;
 }
 
-/* ======================================
-   BUTTONS & INTERACTIVE ELEMENTS
-   ====================================== */
+[data-theme="ramc"] .sidebar-item a,
+[data-theme="ramc"] .sidebar-item .sidebar-link {
+	color: var(--text-color) !important;
+	font-weight: 500;
+	padding: 16px 20px;
+	border-radius: var(--border-radius-lg);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	transition: var(--transition);
+	text-transform: capitalize;
+	letter-spacing: 0.5px;
+}
 
-/* Primary Buttons */
+[data-theme="ramc"] .sidebar-item:hover a,
+[data-theme="ramc"] .sidebar-item:hover .sidebar-link {
+	color: white !important;
+	transform: translateX(8px);
+	text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="ramc"] .sidebar-item.selected,
+[data-theme="ramc"] .sidebar-item.active {
+	background: var(--gradient-accent) !important;
+	box-shadow: var(--shadow-neon);
+	transform: scale(1.02);
+}
+
+[data-theme="ramc"] .sidebar-item.selected a,
+[data-theme="ramc"] .sidebar-item.active a {
+	color: white !important;
+	font-weight: 700;
+	text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="ramc"] .sidebar-item .icon {
+	font-size: 1.1rem;
+	min-width: 24px;
+	display: flex;
+	justify-content: center;
+	filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.6));
+	transition: var(--transition);
+}
+
+[data-theme="ramc"] .sidebar-item:hover .icon {
+	filter: drop-shadow(0 0 15px rgba(34, 197, 94, 1));
+	transform: scale(1.2) rotate(15deg);
+}
+
+/* Mobile sidebar responsiveness */
+@media (max-width: 992px) {
+	[data-theme="ramc"] .desk-sidebar {
+		width: 200px;
+	}
+	
+	[data-theme="ramc"] .desk-sidebar .sidebar-item {
+		margin: 6px 12px;
+	}
+}
+
+@media (max-width: 768px) {
+	[data-theme="ramc"] .desk-sidebar {
+		width: 100%;
+		height: auto;
+		position: fixed;
+		left: -100%;
+		top: 70px;
+		z-index: 1000;
+		transition: left 0.3s ease;
+		max-height: calc(100vh - 70px);
+	}
+	
+	[data-theme="ramc"] .desk-sidebar.mobile-open {
+		left: 0;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+	}
+}
+
+/* ================================================
+   BUTTONS - MODERN & SLEEK
+   ================================================ */
+
 [data-theme="ramc"] .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  border: 1px solid var(--primary-dark);
-  color: var(--neutral-100);
-  font-weight: var(--font-weight-semibold);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-normal);
-  position: relative;
-  overflow: hidden;
+	background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+	border: none;
+	color: white !important;
+	font-weight: 600;
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-modern);
+	transition: var(--transition);
+	transform: translateY(0);
+	padding: 12px 30px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
 }
 
 [data-theme="ramc"] .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary));
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
+	transform: translateY(-3px) scale(1.02) !important;
+	box-shadow: 0 12px 50px rgba(124, 58, 237, 0.5);
+	color: white !important;
 }
 
-[data-theme="ramc"] .btn-primary:focus,
-[data-theme="ramc"] .btn-primary.focus {
-  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
-}
-
-/* Secondary Buttons */
 [data-theme="ramc"] .btn-secondary {
-  background: var(--neutral-200);
-  border: 1px solid var(--border-color);
-  color: var(--primary);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--border-radius-md);
-  transition: var(--transition-normal);
+	background: transparent !important;
+	border: 2px solid var(--accent) !important;
+	color: var(--accent-dark) !important;
+	border-radius: 15px;
+	padding: 10px 30px;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: var(--transition);
 }
 
 [data-theme="ramc"] .btn-secondary:hover {
-  background: var(--hover-bg);
-  border-color: var(--accent);
-  color: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+	background: var(--accent) !important;
+	color: var(--text-color) !important;
+	transform: translateY(-2px);
+	box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
 }
 
-/* Success Buttons */
-[data-theme="ramc"] .btn-success {
-  background: var(--success);
-  border-color: var(--success);
-  border-radius: var(--border-radius-md);
-  font-weight: var(--font-weight-semibold);
-}
+/* ================================================
+   CARDS - COOL DESIGN
+   ================================================ */
 
-/* Warning & Danger Buttons */
-[data-theme="ramc"] .btn-warning {
-  background: var(--warning);
-  border-color: var(--warning);
-  color: var(--neutral-800);
-  font-weight: var(--font-weight-semibold);
-}
-
-[data-theme="ramc"] .btn-danger {
-  background: var(--danger);
-  border-color: var(--danger);
-  font-weight: var(--font-weight-semibold);
-}
-
-/* ======================================
-   FORMS & INPUT ELEMENTS
-   ====================================== */
-
-/* Form Controls */
-[data-theme="ramc"] .form-control {
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-md);
-  background-color: var(--neutral-100);
-  color: var(--text-color);
-  font-weight: var(--font-weight-normal);
-  transition: var(--transition-fast);
-  padding: 0.75rem 1rem;
-}
-
-[data-theme="ramc"] .form-control:focus {
-  border-color: var(--focus-color);
-  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
-  background-color: var(--neutral-100);
-}
-
-/* Form Labels */
-[data-theme="ramc"] .control-label,
-[data-theme="ramc"] .form-label {
-  color: var(--primary-dark);
-  font-weight: var(--font-weight-semibold);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Required Field Indicator */
-[data-theme="ramc"] .control-label.reqd::after,
-[data-theme="ramc"] .form-label.reqd::after {
-  color: var(--danger);
-  font-weight: var(--font-weight-bold);
-}
-
-/* ======================================
-   CARDS & CONTAINERS
-   ====================================== */
-
-/* Main Card Containers */
+/* === CARDS & WIDGETS === */
 [data-theme="ramc"] .card,
-[data-theme="ramc"] .frappe-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-normal);
-  overflow: hidden;
+[data-theme="ramc"] .widget,
+[data-theme="ramc"] .list-row {
+	background: var(--surface) !important;
+	border: 1px solid var(--border);
+	border-radius: var(--border-radius-lg);
+	box-shadow: var(--shadow-modern);
+	transition: var(--transition);
+	position: relative;
+	overflow: hidden;
+}
+
+/* Add subtle animated border glow */
+[data-theme="ramc"] .card::before,
+[data-theme="ramc"] .widget::before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: var(--gradient-primary);
+	border-radius: var(--border-radius-lg);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: -1;
 }
 
 [data-theme="ramc"] .card:hover,
-[data-theme="ramc"] .frappe-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-  border-color: var(--accent);
+[data-theme="ramc"] .widget:hover,
+[data-theme="ramc"] .list-row:hover {
+	transform: translateY(-8px);
+	box-shadow: var(--shadow-neon);
 }
 
-/* Card Headers */
+[data-theme="ramc"] .card:hover::before,
+[data-theme="ramc"] .widget:hover::before {
+	opacity: 0.6;
+	animation: border-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes border-glow {
+	0% { opacity: 0.3; }
+	100% { opacity: 0.8; }
+}
+
 [data-theme="ramc"] .card-header {
-  background: linear-gradient(90deg, var(--neutral-200), var(--neutral-100));
-  border-bottom: 2px solid var(--accent);
-  color: var(--primary-dark);
-  font-weight: var(--font-weight-semibold);
-  padding: 1rem 1.5rem;
+	background: var(--gradient-accent) !important;
+	color: white !important;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 1rem 1.5rem;
+	border-bottom: 2px solid var(--accent);
 }
 
-/* Module Cards */
-[data-theme="ramc"] .module-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-xl);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-normal);
-  overflow: hidden;
+[data-theme="ramc"] .card-body,
+[data-theme="ramc"] .card-content {
+	padding: 1.5rem;
+	color: var(--text-color);
 }
 
-[data-theme="ramc"] .module-card:hover {
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-4px);
-  border-color: var(--accent);
+/* === MODERN BUTTONS === */
+[data-theme="ramc"] .btn {
+	border-radius: var(--border-radius-sm);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: var(--transition);
+	position: relative;
+	overflow: hidden;
+	border: none;
+	padding: 12px 32px;
+	cursor: pointer;
 }
 
-/* ======================================
-   TABLES & DATA DISPLAY
-   ====================================== */
+[data-theme="ramc"] .btn::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	transition: width 0.4s ease, height 0.4s ease;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
 
-/* Data Tables */
+[data-theme="ramc"] .btn:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+[data-theme="ramc"] .btn-primary {
+	background: var(--gradient-primary) !important;
+	color: white !important;
+	box-shadow: var(--shadow-modern);
+}
+
+[data-theme="ramc"] .btn-primary:hover {
+	background: var(--gradient-accent) !important;
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-neon);
+}
+
+[data-theme="ramc"] .btn-secondary {
+	background: var(--surface-secondary) !important;
+	color: var(--text-color) !important;
+	border: 2px solid var(--border);
+}
+
+[data-theme="ramc"] .btn-secondary:hover {
+	background: var(--gradient-primary) !important;
+	color: white !important;
+	border-color: var(--primary);
+	transform: translateY(-2px);
+}
+
+[data-theme="ramc"] .btn-success {
+	background: var(--gradient-accent) !important;
+	color: white !important;
+}
+
+[data-theme="ramc"] .btn-success:hover {
+	background: linear-gradient(135deg, var(--accent-light), var(--accent)) !important;
+	transform: translateY(-4px) scale(1.05);
+}
+
+/* ================================================
+   FORMS - SLEEK & MODERN
+   ================================================ */
+
+[data-theme="ramc"] .form-control {
+	border: 2px solid var(--border-color) !important;
+	border-radius: 15px !important;
+	background: var(--bg-color) !important;
+	color: var(--text-color) !important;
+	padding: 15px 20px;
+	font-weight: 500;
+	transition: var(--transition);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="ramc"] .form-control:focus {
+	border-color: var(--accent) !important;
+	box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2) !important;
+	transform: translateY(-2px);
+	background: rgba(245, 158, 11, 0.03) !important;
+	outline: none !important;
+}
+
+[data-theme="ramc"] .form-control:hover {
+	border-color: var(--accent-light);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="ramc"] .form-label,
+[data-theme="ramc"] .control-label {
+	font-weight: 700 !important;
+	color: var(--primary-dark) !important;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 0.8rem;
+	margin-bottom: 10px;
+}
+
+/* ================================================
+   TABLES - MODERN DESIGN
+   ================================================ */
+
 [data-theme="ramc"] .table {
-  background-color: var(--card-bg);
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
+	background: var(--card-bg);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	box-shadow: var(--shadow-sm);
 }
 
 [data-theme="ramc"] .table thead th {
-  background: linear-gradient(90deg, var(--primary), var(--primary-light));
-  color: var(--neutral-100);
-  font-weight: var(--font-weight-semibold);
-  border: none;
-  padding: 1rem;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+	background: linear-gradient(90deg, var(--primary), var(--primary-light)) !important;
+	color: white !important;
+	font-weight: 600;
+	border: none;
+	padding: 1rem;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	letter-spacing: 0.5px;
 }
 
 [data-theme="ramc"] .table tbody tr {
-  transition: var(--transition-fast);
+	transition: var(--transition);
+	border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="ramc"] .table tbody tr:hover {
-  background-color: var(--hover-bg);
+	background: var(--hover-bg);
 }
 
 [data-theme="ramc"] .table tbody td {
-  border-top: 1px solid var(--border-color);
-  padding: 0.875rem 1rem;
-  vertical-align: middle;
+	padding: 1rem;
+	vertical-align: middle;
+	color: var(--text-color);
 }
 
-/* List Views */
+/* ================================================
+   LIST VIEWS - FIXED & RESPONSIVE
+   ================================================ */
+
 [data-theme="ramc"] .list-row {
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-md);
-  margin-bottom: 0.5rem;
-  transition: var(--transition-fast);
-  background-color: var(--card-bg);
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--border-radius) !important;
+	margin-bottom: 0.5rem;
+	background: var(--card-bg) !important;
+	padding: 1rem;
+	/* Removed problematic transition that causes flicker */
+	transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 [data-theme="ramc"] .list-row:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
-  transform: translateY(-1px);
+	box-shadow: var(--shadow-md) !important;
+	border-color: var(--accent) !important;
+	/* Removed transform that causes list to disappear */
 }
 
-/* ======================================
-   MODALS & DIALOGS
-   ====================================== */
+/* Fix for list container stability */
+[data-theme="ramc"] .frappe-list {
+	min-height: auto !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+[data-theme="ramc"] .list-row-container {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: block !important;
+}
+
+/* Ensure list items are always visible */
+[data-theme="ramc"] .list-row-col {
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+/* Fix list loading states */
+[data-theme="ramc"] .list-loading {
+	background: var(--card-bg) !important;
+	opacity: 1 !important;
+}
+
+[data-theme="ramc"] .empty-state {
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+/* ================================================
+   MODULE CARDS - SPECIAL DESIGN
+   ================================================ */
+
+[data-theme="ramc"] .module-card {
+	background: var(--card-bg);
+	border: 2px solid var(--border-color);
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-md);
+	transition: var(--transition);
+	overflow: hidden;
+}
+
+[data-theme="ramc"] .module-card:hover {
+	box-shadow: var(--shadow-lg);
+	transform: translateY(-4px);
+	border-color: var(--accent);
+}
+
+[data-theme="ramc"] .module-card .module-icon {
+	background: linear-gradient(135deg, var(--primary-light), var(--primary));
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-sm);
+}
+
+/* ================================================
+   MODALS - MODERN DIALOG STYLE
+   ================================================ */
 
 [data-theme="ramc"] .modal-content {
-  border: none;
-  border-radius: var(--border-radius-xl);
-  box-shadow: var(--shadow-xl);
-  overflow: hidden;
+	border: none;
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-lg);
+	overflow: hidden;
 }
 
 [data-theme="ramc"] .modal-header {
-  background: linear-gradient(90deg, var(--primary), var(--primary-light));
-  color: var(--neutral-100);
-  border-bottom: 2px solid var(--accent);
-  padding: 1.5rem;
+	background: linear-gradient(90deg, var(--primary), var(--primary-light));
+	color: white;
+/* ================================================
+   RESPONSIVE DESIGN - COMPREHENSIVE
+   ================================================ */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+	[data-theme="ramc"] .container,
+	[data-theme="ramc"] .container-fluid {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 }
 
-[data-theme="ramc"] .modal-title {
-  font-weight: var(--font-weight-semibold);
-  font-size: 1.25rem;
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+	[data-theme="ramc"] .navbar-brand img {
+		max-height: 36px !important;
+	}
+	
+	[data-theme="ramc"] .navbar {
+		padding: 0.75rem 1rem;
+		min-height: 65px;
+	}
+	
+	[data-theme="ramc"] .navbar .navbar-nav .nav-link {
+		padding: 8px 16px;
+		font-size: 0.8rem;
+		margin: 0 4px;
+	}
+/* ================================================
+   JAVASCRIPT CONFLICT FIXES
+   ================================================ */
+
+/* Prevent transforms from interfering with JS animations */
+[data-theme="ramc"] .list-row,
+[data-theme="ramc"] .frappe-card,
+[data-theme="ramc"] .sidebar-item {
+	/* Use will-change to optimize transforms */
+	will-change: auto;
+	/* Ensure elements stay in document flow */
+	position: relative;
+	/* Prevent flickering */
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 
-[data-theme="ramc"] .modal-body {
-  padding: 2rem;
-  background-color: var(--card-bg);
+/* Fix for Frappe's JavaScript list loading */
+[data-theme="ramc"] .list-container {
+	opacity: 1 !important;
+	visibility: visible !important;
+	min-height: 100px;
 }
 
-[data-theme="ramc"] .modal-footer {
-  background-color: var(--surface-color);
-  border-top: 1px solid var(--border-color);
-  padding: 1.5rem;
+[data-theme="ramc"] .frappe-list .list-row {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: block !important;
+	/* Prevent jumping during load */
+	min-height: 60px;
 }
 
-/* ======================================
-   ALERTS & NOTIFICATIONS
-   ====================================== */
+/* Fix loading states */
+[data-theme="ramc"] .list-loading-state {
+	background: var(--card-bg) !important;
+	opacity: 1 !important;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	min-height: 200px;
+}
+
+/* Ensure pagination works */
+[data-theme="ramc"] .list-paging-area {
+	opacity: 1 !important;
+	visibility: visible !important;
+	padding: 1rem;
+	background: var(--card-bg);
+}
+
+/* Fix empty states */
+[data-theme="ramc"] .msg-box {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: block !important;
+}
+
+/* Prevent layout shifts */
+[data-theme="ramc"] .layout-main-section {
+	min-height: calc(100vh - 150px);
+}
+
+[data-theme="ramc"] .page-container {
+	min-height: 500px;
+}	margin-bottom: 1rem;
+	}
+	
+	[data-theme="ramc"] .form-control {
+		padding: 12px 16px;
+		font-size: 0.9rem;
+	}
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+	[data-theme="ramc"] .navbar-brand img {
+		max-height: 32px !important;
+	}
+	
+	[data-theme="ramc"] .navbar {
+		padding: 0.5rem 1rem;
+		min-height: 60px;
+	}
+	
+	[data-theme="ramc"] .navbar .navbar-nav {
+		flex-direction: column;
+		width: 100%;
+		margin-top: 1rem;
+	}
+	
+	[data-theme="ramc"] .navbar .navbar-nav .nav-link {
+		width: 100%;
+		text-align: center;
+		padding: 12px;
+		margin: 2px 0;
+	}
+	
+	/* Mobile-friendly buttons */
+	[data-theme="ramc"] .btn-primary,
+	[data-theme="ramc"] .btn-secondary {
+		padding: 14px 24px;
+		font-size: 0.9rem;
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
+	
+	/* Mobile forms */
+	[data-theme="ramc"] .form-control {
+		padding: 14px 18px;
+		font-size: 16px; /* Prevents zoom on iOS */
+	}
+	
+	[data-theme="ramc"] .form-label,
+	[data-theme="ramc"] .control-label {
+		font-size: 0.9rem;
+	}
+	
+	/* Mobile cards */
+	[data-theme="ramc"] .card,
+	[data-theme="ramc"] .frappe-card {
+		margin: 0.5rem 0;
+		border-radius: 10px;
+	}
+	
+	[data-theme="ramc"] .card-header {
+		padding: 1rem;
+		font-size: 0.9rem;
+	}
+	
+	/* Mobile tables - make scrollable */
+	[data-theme="ramc"] .table-responsive {
+		border-radius: var(--border-radius);
+		box-shadow: var(--shadow-sm);
+	}
+	
+	[data-theme="ramc"] .table {
+		min-width: 600px;
+	}
+	
+	/* Mobile list rows */
+	[data-theme="ramc"] .list-row {
+		padding: 0.75rem;
+		margin-bottom: 0.5rem;
+		border-radius: 10px;
+	}
+	
+	/* Mobile modals */
+	[data-theme="ramc"] .modal-dialog {
+		margin: 1rem;
+	}
+	
+	[data-theme="ramc"] .modal-header {
+		padding: 1rem;
+	}
+	
+	[data-theme="ramc"] .modal-body {
+		padding: 1rem;
+	}
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+	[data-theme="ramc"] .navbar {
+		padding: 0.5rem 0.75rem;
+	}
+	
+	[data-theme="ramc"] .container,
+	[data-theme="ramc"] .container-fluid {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	
+	[data-theme="ramc"] .btn-primary,
+	[data-theme="ramc"] .btn-secondary {
+		padding: 12px 20px;
+		font-size: 0.85rem;
+	}
+	
+	[data-theme="ramc"] .form-control {
+		padding: 12px 16px;
+	}
+	
+	[data-theme="ramc"] .module-card {
+		margin-bottom: 1rem;
+	}
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+	[data-theme="ramc"] .navbar {
+		min-height: 50px;
+		padding: 0.25rem 1rem;
+	}
+	
+	[data-theme="ramc"] .navbar-brand img {
+		max-height: 28px !important;
+	}
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	[data-theme="ramc"] .navbar-brand img {
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: crisp-edges;
+	}
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+	[data-theme="ramc"] .btn-primary:hover,
+	[data-theme="ramc"] .btn-secondary:hover {
+		transform: none;
+	}
+	
+	[data-theme="ramc"] .card:hover,
+	[data-theme="ramc"] .frappe-card:hover {
+		transform: none;
+	}
+	
+	[data-theme="ramc"] .list-row:hover {
+		/* Keep visual feedback but remove transforms on touch devices */
+		box-shadow: var(--shadow-md) !important;
+		border-color: var(--accent) !important;
+	}
+}
+
+/* ================================================
+   ALERTS - AVIATION STATUS
+   ================================================ */
 
 [data-theme="ramc"] .alert {
-  border: none;
-  border-radius: var(--border-radius-md);
-  border-left: 4px solid;
-  font-weight: var(--font-weight-medium);
-  box-shadow: var(--shadow-sm);
+	border: none;
+	border-radius: var(--border-radius);
+	border-left: 4px solid;
+	font-weight: 500;
+	box-shadow: var(--shadow-sm);
+	padding: 1rem 1.25rem;
 }
 
 [data-theme="ramc"] .alert-success {
-  background-color: rgba(40, 167, 69, 0.1);
-  color: var(--success);
-  border-left-color: var(--success);
+	background: rgba(34, 197, 94, 0.1);
+	color: #059669;
+	border-left-color: #059669;
 }
 
 [data-theme="ramc"] .alert-warning {
-  background-color: rgba(255, 193, 7, 0.1);
-  color: #856404;
-  border-left-color: var(--warning);
+	background: rgba(245, 158, 11, 0.1);
+	color: var(--accent-dark);
+	border-left-color: var(--accent-dark);
 }
 
 [data-theme="ramc"] .alert-danger {
-  background-color: rgba(220, 53, 69, 0.1);
-  color: var(--danger);
-  border-left-color: var(--danger);
+	background: rgba(239, 68, 68, 0.1);
+	color: #dc2626;
+	border-left-color: #dc2626;
 }
 
-[data-theme="ramc"] .alert-info {
-  background-color: rgba(23, 162, 184, 0.1);
-  color: var(--info);
-  border-left-color: var(--info);
-}
-
-/* ======================================
-   BADGES & INDICATORS
-   ====================================== */
-
-[data-theme="ramc"] .badge {
-  font-weight: var(--font-weight-semibold);
-  font-size: 0.75rem;
-  border-radius: var(--border-radius-sm);
-  padding: 0.4em 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-[data-theme="ramc"] .badge-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: var(--neutral-100);
-}
-
-[data-theme="ramc"] .badge-success {
-  background-color: var(--success);
-}
-
-[data-theme="ramc"] .badge-warning {
-  background-color: var(--warning);
-  color: var(--neutral-800);
-}
-
-[data-theme="ramc"] .badge-danger {
-  background-color: var(--danger);
-}
-
-/* ======================================
-   PROGRESS INDICATORS
-   ====================================== */
-
-[data-theme="ramc"] .progress {
-  height: 8px;
-  background-color: var(--neutral-300);
-  border-radius: var(--border-radius-sm);
-  overflow: hidden;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="ramc"] .progress-bar {
-  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
-  transition: width 0.6s ease;
-  box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
-}
-
-/* ======================================
-   TABS & NAVIGATION
-   ====================================== */
-
-[data-theme="ramc"] .nav-tabs {
-  border-bottom: 2px solid var(--border-color);
-  margin-bottom: 1.5rem;
-}
-
-[data-theme="ramc"] .nav-tabs .nav-item .nav-link {
-  color: var(--text-muted);
-  font-weight: var(--font-weight-medium);
-  border: none;
-  border-bottom: 3px solid transparent;
-  padding: 1rem 1.5rem;
-  transition: var(--transition-fast);
-}
-
-[data-theme="ramc"] .nav-tabs .nav-item .nav-link:hover {
-  color: var(--primary);
-  border-bottom-color: var(--accent);
-  background-color: var(--hover-bg);
-}
-
-[data-theme="ramc"] .nav-tabs .nav-item .nav-link.active {
-  color: var(--primary-dark);
-  font-weight: var(--font-weight-semibold);
-  border-bottom-color: var(--accent);
-  background-color: transparent;
-}
-
-/* ======================================
-   DROPDOWNS
-   ====================================== */
-
-[data-theme="ramc"] .dropdown-menu {
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-lg);
-  background-color: var(--card-bg);
-  padding: 0.5rem 0;
-}
-
-[data-theme="ramc"] .dropdown-item {
-  color: var(--text-color);
-  font-weight: var(--font-weight-normal);
-  padding: 0.75rem 1.5rem;
-  transition: var(--transition-fast);
-}
-
-[data-theme="ramc"] .dropdown-item:hover {
-  background-color: var(--hover-bg);
-  color: var(--primary-dark);
-}
-
-[data-theme="ramc"] .dropdown-item.active {
-  background: linear-gradient(90deg, var(--primary), var(--primary-light));
-  color: var(--neutral-100);
-}
-
-/* ======================================
-   SCROLLBARS (Webkit)
-   ====================================== */
+/* ================================================
+   SCROLLBARS - MODERN STYLE
+   ================================================ */
 
 [data-theme="ramc"] ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+	width: 8px;
+	height: 8px;
 }
 
 [data-theme="ramc"] ::-webkit-scrollbar-track {
-  background: var(--neutral-200);
-  border-radius: var(--border-radius-sm);
+	background: var(--gray-200);
+	border-radius: 4px;
 }
 
 [data-theme="ramc"] ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--primary-light), var(--primary));
-  border-radius: var(--border-radius-sm);
-  transition: var(--transition-fast);
+	background: linear-gradient(180deg, var(--primary-light), var(--primary));
+	border-radius: 4px;
+	transition: var(--transition);
 }
 
 [data-theme="ramc"] ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--accent-dark), var(--accent));
+	background: linear-gradient(180deg, var(--accent), var(--accent-dark));
 }
 
-/* ======================================
-   LOGIN PAGE ENHANCEMENTS
-   ====================================== */
-
-[data-theme="ramc"] .for-login {
-  background: linear-gradient(135deg, var(--neutral-200) 0%, var(--neutral-300) 100%);
-  min-height: 100vh;
-}
-
-[data-theme="ramc"] .login-content {
-  background: var(--card-bg);
-  border-radius: var(--border-radius-xl);
-  box-shadow: var(--shadow-xl);
-  padding: 3rem;
-  margin: 2rem;
-  border: 1px solid var(--border-color);
-}
-
-[data-theme="ramc"] .login-content .login-logo {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-[data-theme="ramc"] .login-content h4 {
-  color: var(--primary-dark);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-/* ======================================
+/* ================================================
    RESPONSIVE DESIGN
-   ====================================== */
+   ================================================ */
 
 @media (max-width: 768px) {
-  [data-theme="ramc"] .navbar-brand img {
-    max-height: 28px;
-  }
-  
-  [data-theme="ramc"] .login-content {
-    margin: 1rem;
-    padding: 2rem;
-  }
-  
-  [data-theme="ramc"] .modal-body {
-    padding: 1.5rem;
-  }
-  
-  [data-theme="ramc"] .card-header {
-    padding: 0.75rem 1rem;
-  }
+	[data-theme="ramc"] .navbar-brand img {
+		max-height: 32px !important;
+	}
+	
+	[data-theme="ramc"] .navbar {
+		padding: 0.75rem;
+		min-height: 60px;
+	}
 }
 
-/* ======================================
-   PRINT STYLES
-   ====================================== */
+/* ================================================
+   AVIATION STATUS INDICATORS
+   ================================================ */
 
-@media print {
-  [data-theme="ramc"] {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --border-color: #cccccc;
-  }
-  
-  [data-theme="ramc"] .navbar,
-  [data-theme="ramc"] .desk-sidebar,
-  [data-theme="ramc"] .btn,
-  [data-theme="ramc"] .modal {
-    display: none !important;
-  }
-}
-
-/* ======================================
-   ACCESSIBILITY ENHANCEMENTS
-   ====================================== */
-
-[data-theme="ramc"] :focus {
-  outline: 2px solid var(--focus-color);
-  outline-offset: 2px;
-}
-
-[data-theme="ramc"] .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  [data-theme="ramc"] {
-    --border-color: #000000;
-    --text-color: #000000;
-    --bg-color: #ffffff;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  [data-theme="ramc"] *,
-  [data-theme="ramc"] *::before,
-  [data-theme="ramc"] *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* ======================================
-   CUSTOM AVIATION-SPECIFIC ELEMENTS
-   ====================================== */
-
-/* Maintenance Module Enhancements */
-[data-theme="ramc"] .module-card[data-module="Maintenance"] {
-  background: linear-gradient(135deg, var(--accent-light), var(--neutral-100));
-  border: 2px solid var(--accent);
-}
-
-[data-theme="ramc"] .module-card[data-module="Projects"] {
-  background: linear-gradient(135deg, var(--primary-light), var(--neutral-100));
-  border: 2px solid var(--primary);
-}
-
-/* Status Indicators for Aircraft */
 [data-theme="ramc"] .aircraft-status-operational {
-  color: var(--success);
-  font-weight: var(--font-weight-semibold);
+	color: #059669;
+	font-weight: 600;
 }
 
 [data-theme="ramc"] .aircraft-status-maintenance {
-  color: var(--warning);
-  font-weight: var(--font-weight-semibold);
+	color: var(--accent-dark);
+	font-weight: 600;
 }
 
 [data-theme="ramc"] .aircraft-status-grounded {
-  color: var(--danger);
-  font-weight: var(--font-weight-semibold);
+	color: #dc2626;
+	font-weight: 600;
 }
-
-/* Aviation Gold Accent Elements */
-[data-theme="ramc"] .aviation-highlight {
-  background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
-  border-left: 4px solid var(--accent);
-  padding-left: 1rem;
-}
-
-/* Cockpit-style Information Panels */
-[data-theme="ramc"] .cockpit-panel {
-  background: var(--neutral-800);
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: var(--border-radius-md);
-  padding: 1rem;
-  font-family: 'Courier New', monospace;
-  font-weight: var(--font-weight-medium);
-  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.1);
-}
-
-/* ======================================
-   END OF RAMC AVIATION THEME
-   ====================================== */

@@ -1,0 +1,165 @@
+// RAMC Aviation Forms
+// Clean, accessible form designs
+
+[data-theme="ramc"] {
+  // Form controls
+  .form-control {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    
+    &::placeholder {
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      background: var(--card-bg);
+    }
+    
+    &:disabled {
+      background: var(--surface-bg);
+      color: var(--text-muted);
+      cursor: not-allowed;
+    }
+  }
+  
+  // Form labels
+  .form-label,
+  .control-label {
+    color: var(--heading-color);
+    font-weight: var(--font-weight-medium, 500);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    
+    &.required::after {
+      content: " *";
+      color: var(--danger);
+    }
+  }
+  
+  // Form groups
+  .form-group {
+    margin-bottom: 1.5rem;
+    
+    .help-text {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-top: 0.25rem;
+    }
+  }
+  
+  // Input groups
+  .input-group {
+    .input-group-text {
+      background: var(--surface-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.75rem;
+    }
+    
+    .form-control {
+      border-left: none;
+      
+      &:focus + .input-group-text {
+        border-color: var(--primary);
+      }
+    }
+  }
+  
+  // Select dropdowns
+  .form-select {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-color);
+    padding: 0.75rem;
+    
+    &:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+  }
+  
+  // Checkboxes and radios
+  .form-check {
+    margin-bottom: 0.5rem;
+    
+    .form-check-input {
+      width: 1.2rem;
+      height: 1.2rem;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      
+      &:checked {
+        background: var(--primary);
+        border-color: var(--primary);
+      }
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      }
+    }
+    
+    .form-check-label {
+      color: var(--text-color);
+      font-weight: var(--font-weight-normal, 400);
+      margin-left: 0.5rem;
+    }
+  }
+  
+  // Switch toggles
+  .form-switch {
+    .form-check-input {
+      width: 2rem;
+      height: 1.2rem;
+      border-radius: 1rem;
+      background: var(--border-color);
+      
+      &:checked {
+        background: var(--primary);
+      }
+    }
+  }
+  
+  // Form validation
+  .is-invalid {
+    .form-control {
+      border-color: var(--danger);
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+      }
+    }
+  }
+  
+  .is-valid {
+    .form-control {
+      border-color: var(--success);
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+      }
+    }
+  }
+  
+  .invalid-feedback {
+    color: var(--danger);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .valid-feedback {
+    color: var(--success);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+}
