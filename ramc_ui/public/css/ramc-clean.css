@@ -1,0 +1,511 @@
+/*!
+ * RAMC Aviation Theme - Clean & Professional
+ * Version: 3.0 - Optimized & Bootstrap Ready
+ */
+
+[data-theme="ramc"] {
+	/* === CORE COLORS === */
+	--primary: #0ea5e9;
+	--primary-light: #38bdf8;
+	--primary-dark: #0284c7;
+	--accent: #22c55e;
+	--accent-light: #4ade80;
+	
+	/* === BACKGROUNDS === */
+	--bg-color: #ffffff;
+	--card-bg: #ffffff;
+	--surface-color: #f8fafc;
+	--border-color: #e2e8f0;
+	--text-color: #111827;
+	--text-muted: #6b7280;
+	
+	/* === EFFECTS === */
+	--shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+	--shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+	--border-radius: 8px;
+	--transition: all 0.2s ease;
+}
+
+/* ================================================
+   GLOBAL STYLES
+   ================================================ */
+[data-theme="ramc"] body {
+	font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+	color: var(--text-color);
+	background: var(--bg-color);
+}
+
+/* ================================================
+   NAVBAR - CLEAN BOOTSTRAP DESIGN
+   ================================================ */
+[data-theme="ramc"] .navbar {
+	background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%) !important;
+	border-bottom: 2px solid var(--accent) !important;
+	box-shadow: var(--shadow-md);
+	min-height: 70px !important;
+	padding: 1rem 1.5rem !important;
+}
+
+/* Logo Enhancement - BIGGER & VISIBLE */
+[data-theme="ramc"] .navbar-brand img {
+	max-height: 55px !important;
+	width: auto !important;
+	filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) !important;
+	transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .navbar-brand img:hover {
+	transform: scale(1.1) !important;
+	filter: brightness(0) invert(1) drop-shadow(0 0 15px rgba(34, 197, 94, 0.8)) !important;
+}
+
+/* Search Bar - SINGLE CLEAN STYLE */
+[data-theme="ramc"] .navbar .search-bar,
+[data-theme="ramc"] .global-search {
+	flex-grow: 1 !important;
+	max-width: 400px !important;
+	margin: 0 2rem !important;
+	position: relative !important;
+}
+
+[data-theme="ramc"] .navbar .search-bar input,
+[data-theme="ramc"] .global-search input,
+[data-theme="ramc"] input[placeholder*="Search"] {
+	width: 100% !important;
+	padding: 12px 20px 12px 45px !important;
+	border: 2px solid rgba(255, 255, 255, 0.3) !important;
+	border-radius: 25px !important;
+	background: rgba(255, 255, 255, 0.2) !important;
+	color: white !important;
+	font-size: 14px !important;
+	backdrop-filter: blur(10px) !important;
+	transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .navbar .search-bar input::placeholder,
+[data-theme="ramc"] .global-search input::placeholder,
+[data-theme="ramc"] input[placeholder*="Search"]::placeholder {
+	color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="ramc"] .navbar .search-bar input:focus,
+[data-theme="ramc"] .global-search input:focus,
+[data-theme="ramc"] input[placeholder*="Search"]:focus {
+	outline: none !important;
+	border-color: var(--accent) !important;
+	background: rgba(255, 255, 255, 0.3) !important;
+	box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Search Icon - SINGLE ICON ONLY */
+[data-theme="ramc"] .navbar .search-bar::before,
+[data-theme="ramc"] .global-search::before {
+	content: "🔍" !important;
+	position: absolute !important;
+	left: 15px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	z-index: 10 !important;
+	pointer-events: none !important;
+}
+
+/* Remove duplicate icons */
+[data-theme="ramc"] .navbar .search-bar .fa-search,
+[data-theme="ramc"] .global-search .fa-search,
+[data-theme="ramc"] .search-icon {
+	display: none !important;
+}
+
+/* Navbar Links */
+[data-theme="ramc"] .navbar .navbar-nav {
+	display: flex !important;
+	align-items: center !important;
+	margin-left: auto !important;
+	gap: 1rem !important;
+}
+
+[data-theme="ramc"] .navbar .navbar-nav .nav-link {
+	color: white !important;
+	font-weight: 600 !important;
+	padding: 10px 20px !important;
+	border-radius: 20px !important;
+	transition: var(--transition) !important;
+	text-decoration: none !important;
+}
+
+[data-theme="ramc"] .navbar .navbar-nav .nav-link:hover {
+	background: rgba(255, 255, 255, 0.2) !important;
+	color: white !important;
+	text-decoration: none !important;
+}
+
+/* Dropdown Menus */
+[data-theme="ramc"] .navbar .dropdown-menu {
+	background: var(--card-bg) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--border-radius) !important;
+	box-shadow: var(--shadow-md) !important;
+	margin-top: 5px !important;
+}
+
+[data-theme="ramc"] .navbar .dropdown-item {
+	color: var(--text-color) !important;
+	padding: 10px 20px !important;
+	transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .navbar .dropdown-item:hover {
+	background: rgba(14, 165, 233, 0.1) !important;
+	color: var(--primary) !important;
+}
+
+/* ================================================
+   SIDEBAR - CLEAN MODERN DESIGN
+   ================================================ */
+[data-theme="ramc"] .desk-sidebar {
+	background: var(--surface-color) !important;
+	border-right: 1px solid var(--border-color) !important;
+	width: 260px !important;
+	min-height: 100vh !important;
+	padding: 1rem 0 !important;
+	box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Sidebar Items */
+[data-theme="ramc"] .sidebar-item {
+	margin: 4px 16px !important;
+	border-radius: var(--border-radius) !important;
+	transition: var(--transition) !important;
+	position: relative !important;
+}
+
+[data-theme="ramc"] .sidebar-item a,
+[data-theme="ramc"] .sidebar-item .sidebar-link {
+	display: flex !important;
+	align-items: center !important;
+	padding: 14px 18px !important;
+	color: var(--text-color) !important;
+	text-decoration: none !important;
+	border-radius: var(--border-radius) !important;
+	transition: var(--transition) !important;
+	font-weight: 500 !important;
+	gap: 12px !important;
+}
+
+[data-theme="ramc"] .sidebar-item:hover {
+	background: rgba(14, 165, 233, 0.08) !important;
+	transform: translateX(4px) !important;
+}
+
+[data-theme="ramc"] .sidebar-item:hover a,
+[data-theme="ramc"] .sidebar-item:hover .sidebar-link {
+	color: var(--primary) !important;
+}
+
+[data-theme="ramc"] .sidebar-item.selected,
+[data-theme="ramc"] .sidebar-item.active {
+	background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+	color: white !important;
+}
+
+[data-theme="ramc"] .sidebar-item.selected a,
+[data-theme="ramc"] .sidebar-item.active a {
+	color: white !important;
+	font-weight: 600 !important;
+}
+
+/* Sidebar Icons */
+[data-theme="ramc"] .sidebar-item .icon {
+	width: 20px !important;
+	height: 20px !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	font-size: 16px !important;
+	opacity: 0.8 !important;
+	transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .sidebar-item:hover .icon,
+[data-theme="ramc"] .sidebar-item.active .icon {
+	opacity: 1 !important;
+}
+
+/* ================================================
+   CARDS - MODERN DESIGN
+   ================================================ */
+[data-theme="ramc"] .card,
+[data-theme="ramc"] .frappe-card {
+	background: var(--card-bg) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--border-radius) !important;
+	box-shadow: var(--shadow-sm) !important;
+	transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .card:hover,
+[data-theme="ramc"] .frappe-card:hover {
+	box-shadow: var(--shadow-md) !important;
+	border-color: var(--primary) !important;
+}
+
+[data-theme="ramc"] .card-header {
+	background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+	color: white !important;
+	font-weight: 600 !important;
+	border-bottom: none !important;
+}
+
+/* ================================================
+   BUTTONS - BOOTSTRAP ENHANCED
+   ================================================ */
+[data-theme="ramc"] .btn {
+	border-radius: var(--border-radius) !important;
+	font-weight: 600 !important;
+	transition: var(--transition) !important;
+	border: none !important;
+}
+
+[data-theme="ramc"] .btn-primary {
+	background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+	color: white !important;
+}
+
+[data-theme="ramc"] .btn-primary:hover {
+	background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+	transform: translateY(-1px) !important;
+	box-shadow: var(--shadow-md) !important;
+}
+
+[data-theme="ramc"] .btn-success {
+	background: linear-gradient(135deg, var(--accent), var(--accent-light)) !important;
+	color: white !important;
+}
+
+[data-theme="ramc"] .btn-success:hover {
+	background: var(--accent) !important;
+	transform: translateY(-1px) !important;
+}
+
+/* ================================================
+   FORMS - CLEAN INPUT DESIGN
+   ================================================ */
+[data-theme="ramc"] .form-control {
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--border-radius) !important;
+	padding: 12px 16px !important;
+	background: var(--bg-color) !important;
+	color: var(--text-color) !important;
+	transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .form-control:focus {
+	border-color: var(--accent) !important;
+	box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2) !important;
+	outline: none !important;
+}
+
+[data-theme="ramc"] .form-label {
+	font-weight: 600 !important;
+	color: var(--text-color) !important;
+	margin-bottom: 8px !important;
+}
+
+/* ================================================
+   TABLES - CLEAN DESIGN
+   ================================================ */
+[data-theme="ramc"] .table {
+	background: var(--card-bg) !important;
+	border-radius: var(--border-radius) !important;
+	overflow: hidden !important;
+}
+
+[data-theme="ramc"] .table thead th {
+	background: var(--primary) !important;
+	color: white !important;
+	border: none !important;
+	font-weight: 600 !important;
+	padding: 16px !important;
+}
+
+[data-theme="ramc"] .table tbody td {
+	padding: 14px 16px !important;
+	border-bottom: 1px solid var(--border-color) !important;
+}
+
+[data-theme="ramc"] .table tbody tr:hover {
+	background: rgba(14, 165, 233, 0.05) !important;
+}
+
+/* ================================================
+   LIST VIEWS - STABLE DESIGN
+   ================================================ */
+[data-theme="ramc"] .list-row {
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--border-radius) !important;
+	background: var(--card-bg) !important;
+	margin-bottom: 8px !important;
+	padding: 16px !important;
+	transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .list-row:hover {
+	box-shadow: var(--shadow-md) !important;
+	border-color: var(--primary) !important;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+@media (max-width: 768px) {
+	/* Mobile Navbar */
+	[data-theme="ramc"] .navbar {
+		padding: 1rem !important;
+		flex-wrap: wrap !important;
+	}
+	
+	[data-theme="ramc"] .navbar-brand img {
+		max-height: 45px !important;
+	}
+	
+	[data-theme="ramc"] .navbar .search-bar,
+	[data-theme="ramc"] .global-search {
+		max-width: 100% !important;
+		margin: 1rem 0 0 0 !important;
+		order: 3 !important;
+	}
+	
+	[data-theme="ramc"] .navbar .navbar-nav {
+		order: 2 !important;
+		margin-left: 0 !important;
+	}
+	
+	/* Mobile Sidebar */
+	[data-theme="ramc"] .desk-sidebar {
+		position: fixed !important;
+		left: -100% !important;
+		top: 0 !important;
+		height: 100vh !important;
+		z-index: 1050 !important;
+		transition: left 0.3s ease !important;
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.3) !important;
+	}
+	
+	[data-theme="ramc"] .desk-sidebar.mobile-open {
+		left: 0 !important;
+	}
+	
+	/* Mobile overlay */
+	[data-theme="ramc"] .sidebar-overlay {
+		position: fixed !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		background: rgba(0, 0, 0, 0.5) !important;
+		z-index: 1040 !important;
+		opacity: 0 !important;
+		visibility: hidden !important;
+		transition: all 0.3s ease !important;
+	}
+	
+	[data-theme="ramc"] .sidebar-overlay.active {
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+	
+	/* Mobile sidebar toggle */
+	[data-theme="ramc"] .sidebar-toggle {
+		display: flex !important;
+		position: fixed !important;
+		top: 15px !important;
+		left: 15px !important;
+		width: 45px !important;
+		height: 45px !important;
+		background: var(--primary) !important;
+		color: white !important;
+		border: none !important;
+		border-radius: 8px !important;
+		align-items: center !important;
+		justify-content: center !important;
+		z-index: 1060 !important;
+		box-shadow: var(--shadow-md) !important;
+		font-size: 18px !important;
+	}
+	
+	[data-theme="ramc"] .sidebar-toggle:hover {
+		background: var(--primary-dark) !important;
+	}
+}
+
+/* ================================================
+   UTILITIES
+   ================================================ */
+[data-theme="ramc"] .text-primary {
+	color: var(--primary) !important;
+}
+
+[data-theme="ramc"] .bg-primary {
+	background: var(--primary) !important;
+	color: white !important;
+}
+
+[data-theme="ramc"] .border-primary {
+	border-color: var(--primary) !important;
+}
+
+/* Animation classes */
+[data-theme="ramc"] .animate-fade-in {
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================
+   SCROLLBAR STYLING
+   ================================================ */
+[data-theme="ramc"] ::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+[data-theme="ramc"] ::-webkit-scrollbar-track {
+	background: var(--surface-color);
+}
+
+[data-theme="ramc"] ::-webkit-scrollbar-thumb {
+	background: var(--primary);
+	border-radius: 4px;
+}
+
+[data-theme="ramc"] ::-webkit-scrollbar-thumb:hover {
+	background: var(--primary-dark);
+}
+
+/* ================================================
+   FOCUS ACCESSIBILITY
+   ================================================ */
+[data-theme="ramc"] *:focus {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* ================================================
+   LOADING STATES
+   ================================================ */
+[data-theme="ramc"] .loading-spinner {
+	width: 32px;
+	height: 32px;
+	border: 3px solid var(--border-color);
+	border-top-color: var(--primary);
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}

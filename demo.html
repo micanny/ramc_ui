@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ramc">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMC Aviation Theme - Demo</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- RAMC Theme CSS -->
+    <style>
+        /* Include the RAMC theme CSS here */
+        
+        [data-theme="ramc"] {
+            --primary: #0ea5e9;
+            --primary-light: #38bdf8;
+            --primary-dark: #0284c7;
+            --accent: #22c55e;
+            --accent-light: #4ade80;
+            
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --surface-color: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-color: #111827;
+            --text-muted: #6b7280;
+            
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+            --border-radius: 8px;
+            --transition: all 0.2s ease;
+        }
+        
+        [data-theme="ramc"] body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+        
+        [data-theme="ramc"] .navbar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%) !important;
+            border-bottom: 2px solid var(--accent) !important;
+            box-shadow: var(--shadow-md);
+            min-height: 70px !important;
+            padding: 1rem 1.5rem !important;
+        }
+        
+        [data-theme="ramc"] .navbar-brand img {
+            max-height: 55px !important;
+            width: auto !important;
+            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) !important;
+        }
+        
+        [data-theme="ramc"] .search-container {
+            flex-grow: 1 !important;
+            max-width: 400px !important;
+            margin: 0 2rem !important;
+            position: relative !important;
+        }
+        
+        [data-theme="ramc"] .search-container input {
+            width: 100% !important;
+            padding: 12px 20px 12px 45px !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            border-radius: 25px !important;
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+            font-size: 14px !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        
+        [data-theme="ramc"] .search-container::before {
+            content: "🔍";
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        [data-theme="ramc"] .search-container input::placeholder {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        [data-theme="ramc"] .navbar .nav-link {
+            color: white !important;
+            font-weight: 600 !important;
+            padding: 10px 20px !important;
+            border-radius: 20px !important;
+            transition: var(--transition) !important;
+        }
+        
+        [data-theme="ramc"] .navbar .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+        }
+        
+        [data-theme="ramc"] .sidebar {
+            background: var(--surface-color) !important;
+            border-right: 1px solid var(--border-color) !important;
+            width: 260px !important;
+            min-height: 100vh !important;
+            padding: 1rem 0 !important;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05) !important;
+        }
+        
+        [data-theme="ramc"] .sidebar-item {
+            margin: 4px 16px !important;
+            border-radius: var(--border-radius) !important;
+            transition: var(--transition) !important;
+        }
+        
+        [data-theme="ramc"] .sidebar-item a {
+            display: flex !important;
+            align-items: center !important;
+            padding: 14px 18px !important;
+            color: var(--text-color) !important;
+            text-decoration: none !important;
+            border-radius: var(--border-radius) !important;
+            transition: var(--transition) !important;
+            font-weight: 500 !important;
+            gap: 12px !important;
+        }
+        
+        [data-theme="ramc"] .sidebar-item:hover {
+            background: rgba(14, 165, 233, 0.08) !important;
+            transform: translateX(4px) !important;
+        }
+        
+        [data-theme="ramc"] .sidebar-item:hover a {
+            color: var(--primary) !important;
+        }
+        
+        [data-theme="ramc"] .sidebar-item.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+        }
+        
+        [data-theme="ramc"] .sidebar-item.active a {
+            color: white !important;
+            font-weight: 600 !important;
+        }
+        
+        [data-theme="ramc"] .card {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: var(--border-radius) !important;
+            box-shadow: var(--shadow-sm) !important;
+        }
+        
+        [data-theme="ramc"] .card:hover {
+            box-shadow: var(--shadow-md) !important;
+            border-color: var(--primary) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/200x60/0ea5e9/ffffff?text=RAMC+AVIATION" alt="RAMC Aviation">
+            </a>
+            
+            <!-- Search Bar - Single, Clean Design -->
+            <div class="search-container">
+                <input type="text" class="form-control" placeholder="Search or type a command (Ctrl + G)">
+            </div>
+            
+            <!-- Navigation Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">🔔</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        HELP
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Documentation</a></li>
+                        <li><a class="dropdown-item" href="#">Support</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        A
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <div class="sidebar-item active">
+                    <a href="#">
+                        <span class="icon">🏠</span>
+                        Home
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <span class="icon">📊</span>
+                        Accounting
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <span class="icon">🔧</span>
+                        RAMC Maintenance
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <span class="icon">🛒</span>
+                        Buying
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <span class="icon">💰</span>
+                        Selling
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <span class="icon">📦</span>
+                        Stock
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <span class="icon">🏭</span>
+                        Assets
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <span class="icon">👥</span>
+                        HR
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <div class="container mt-4">
+                    <h1 class="mb-4">✈️ RAMC Aviation ERP - Clean Theme Demo</h1>
+                    
+                    <div class="alert alert-success">
+                        <strong>✅ Fixed Issues:</strong>
+                        <ul class="mb-0 mt-2">
+                            <li><strong>Search Bar:</strong> Single, clean design - no duplicate icons</li>
+                            <li><strong>Logo:</strong> Bigger, visible, and properly filtered</li>
+                            <li><strong>Sidebar:</strong> Cool hover effects and smooth animations</li>
+                            <li><strong>Bootstrap:</strong> Fully integrated and compatible</li>
+                            <li><strong>Code:</strong> Removed all duplicate and conflicting CSS/JS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">✨ Theme Features</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Clean, professional design</li>
+                                        <li>Bootstrap 5 compatible</li>
+                                        <li>Responsive mobile layout</li>
+                                        <li>Aviation-themed colors</li>
+                                        <li>Smooth hover animations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">🔧 Technical Improvements</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Removed duplicate CSS rules</li>
+                                        <li>Consolidated JavaScript files</li>
+                                        <li>Fixed conflicting selectors</li>
+                                        <li>Optimized for performance</li>
+                                        <li>Better accessibility</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">🎯 What's Now Working</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h6 class="text-primary">✅ Search Bar</h6>
+                                    <p class="small">Single, centered search with one clean icon</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="text-primary">✅ Logo</h6>
+                                    <p class="small">Bigger, visible with proper white filter</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="text-primary">✅ Sidebar</h6>
+                                    <p class="small">Cool hover effects with slide animations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
