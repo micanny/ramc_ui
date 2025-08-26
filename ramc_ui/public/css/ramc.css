@@ -239,6 +239,16 @@ body.sidebar-open {
   margin-right: 32px !important;
 }
 
+/* Adjust navbar logo size and background */
+[data-theme="ramc"] .navbar-brand .app-logo {
+  max-height: 60px !important; /* Increase logo size */
+  max-width: auto !important;
+  background: #ffffff !important; /* Add white background */
+  padding: 5px !important; /* Add padding to fit the logo */
+  border-radius: var(--radius-premium) !important; /* Smooth corners */
+  box-shadow: var(--shadow-subtle) !important; /* Subtle shadow */
+}
+
 /* Clean Aircraft Search Bar - Using Frappe's actual structure */
 [data-theme="ramc"] .navbar .search-bar {
   position: relative !important;
@@ -424,12 +434,20 @@ body.sidebar-open {
   box-shadow: var(--shadow-subtle) !important;
 }
 
-[data-theme="ramc"] .sidebar-toggle-btn:hover {
-  background: var(--gradient-cockpit) !important;
-  border-color: var(--sky-electric) !important;
-  transform: scale(1.08) !important;
-  box-shadow: var(--shadow-dramatic) !important;
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4) !important;
+[data-theme="ramc"] .btn-reset.sidebar-toggle-btn {
+  background: var(--gradient-premium) !important; /* Premium gradient background */
+  color: var(--text-cockpit) !important; /* Ensure text is readable */
+  border: 2px solid var(--aviation-gold) !important; /* Gold border for contrast */
+  border-radius: var(--radius-premium) !important; /* Smooth corners */
+  box-shadow: var(--shadow-subtle) !important; /* Subtle shadow */
+  transition: all 0.3s ease-in-out !important; /* Smooth hover effect */
+}
+
+[data-theme="ramc"] .btn-reset.sidebar-toggle-btn:hover {
+  background: var(--gradient-cockpit) !important; /* Darker background on hover */
+  border-color: var(--sky-electric) !important; /* Blue border on hover */
+  transform: scale(1.05) !important; /* Slightly enlarge on hover */
+  box-shadow: var(--shadow-dramatic) !important; /* Dramatic shadow on hover */
 }
 
 [data-theme="ramc"] .standard-sidebar .list-link,
@@ -818,4 +836,10 @@ body.sidebar-open {
   background: var(--gradient-cockpit) !important; /* Restore original dark background */
   color: var(--text-cockpit) !important; /* Ensure text is readable */
   border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Subtle border */
+}
+
+.avatar-frame,
+.standard-image {
+  background: transparent !important; /* Remove semi-transparent white overlay */
+  box-shadow: none !important; /* Remove any shadow that might cause the effect */
 }
