@@ -1,9 +1,9 @@
-// RAMC Sidebar - SUPER COOL DESIGN
+// RAMC Sidebar - SUPER COOL DESIGN WITH INTEGRATED HAMBURGER
 [data-theme="ramc"] {
   .desk-sidebar {
-    background: linear-gradient(180deg, rgba(124, 58, 237, 0.05), rgba(245, 158, 11, 0.02)) !important;
-    border-right: 3px solid var(--accent);
-    backdrop-filter: blur(10px);
+    background: transparent !important;
+    border-right: 1px solid var(--border-color) !important;
+    backdrop-filter: none;
     
     .sidebar-item {
       margin: 8px 16px;
@@ -28,6 +28,76 @@
         a {
           color: white !important;
         }
+      }
+    }
+  }
+
+  // Mobile responsive - integrate hamburger with sidebar
+  @media (max-width: 767px) {
+    .desk-sidebar {
+      position: fixed !important;
+      left: -280px !important;
+      top: 0 !important;
+      height: 100vh !important;
+      width: 280px !important;
+      z-index: 1050 !important;
+      transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      box-shadow: 8px 0 30px rgba(0, 0, 0, 0.15) !important;
+      
+      &.mobile-open {
+        left: 0 !important;
+      }
+    }
+
+    // Hamburger toggle button integrated with sidebar
+    .toggle-sidebar {
+      position: fixed !important;
+      top: 12px !important;
+      left: 12px !important;
+      width: 44px !important;
+      height: 44px !important;
+      background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+      border: none !important;
+      border-radius: var(--radius-lg) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 1060 !important;
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3) !important;
+      transition: var(--transition) !important;
+      color: white !important;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4) !important;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      .icon {
+        font-size: 18px;
+      }
+    }
+
+    // Mobile overlay
+    .sidebar-overlay {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: rgba(0, 0, 0, 0.5) !important;
+      backdrop-filter: blur(4px) !important;
+      z-index: 1040 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: all 0.3s ease !important;
+      
+      &.active {
+        opacity: 1 !important;
+        visibility: visible !important;
       }
     }
   }

@@ -1,13 +1,25 @@
 /*!
  * RAMC Aviation Theme - WORLD CLASS DESIGN
- * Ultra Modern ERP Interface with Cool Purple & Gold
+ * Professional Dramatic Light Theme for Aviation Management
  * Version: 3.0.0
  */
 
-// Import cool components
+// Import variables first
+@import 'variables';
+
+// Import all professional components
 @import 'components/navbar';
 @import 'components/sidebar'; 
+@import 'components/page';
+@import 'components/page-content';
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/tables-lists';
+@import 'components/search-dropdown';
 @import 'components/cool-forms';
+
+// Import custom patches
+@import 'components/custom';
 
 // Global typography and base styles
 [data-theme="ramc"] {
@@ -120,12 +132,12 @@
 
 // Dark theme support (for future use)
 [data-theme="ramc-dark"] {
-  --bg-color: #{$ramc-gray-900};
-  --card-bg: #{$ramc-gray-800};
-  --surface-bg: #{$ramc-gray-800};
-  --text-color: #{$ramc-white};
-  --text-muted: #{$ramc-gray-400};
-  --heading-color: #{$ramc-white};
-  --border-color: #{$ramc-gray-700};
-  --hover-bg: #{$ramc-gray-700};
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --surface-bg: #1e293b;
+  --text-color: #ffffff;
+  --text-muted: #94a3b8;
+  --heading-color: #ffffff;
+  --border-color: #334155;
+  --hover-bg: #334155;
 }

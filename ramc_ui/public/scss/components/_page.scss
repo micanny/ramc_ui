@@ -1,155 +1,237 @@
-// RAMC Aviation Page Layout
-// Modern, clean page design
+// RAMC Aviation Page Component
+// Professional dramatic light theme layout
 
 [data-theme="ramc"] {
-  // Main page container
-  .layout-main {
-    background: var(--surface-bg);
-    min-height: calc(100vh - 60px);
+  // ======================================
+  // MAIN PAGE LAYOUT - DRAMATIC LIGHT THEME
+  // ======================================
+  
+  body {
+    background: var(--body-bg) !important;
+    color: var(--text-color) !important;
+    font-family: var(--font-family) !important;
+    line-height: 1.6;
+  }
+
+  // Professional page container with dramatic gradient
+  .page-container,
+  .workspace-container,
+  .main-section {
+    background: linear-gradient(135deg, 
+      #f8fafc 0%, 
+      #ffffff 25%, 
+      #f1f5f9 50%, 
+      #e2e8f0 75%, 
+      #f8fafc 100%) !important;
+    min-height: calc(100vh - 80px) !important;
+    padding: 2rem !important;
+    position: relative;
     
-    .layout-main-section {
-      background: var(--bg-color);
-      border-radius: var(--radius-lg);
-      margin: 1rem;
-      padding: 1.5rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-color);
+    // Professional pattern overlay
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 49%, rgba(30, 64, 175, 0.01) 50%, transparent 51%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    // Content above overlay
+    > * {
+      position: relative;
+      z-index: 1;
     }
   }
+
+  // Page headers with professional styling - INTEGRATED
+  .page-head,
+  .workspace-head {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0 1.5rem 0 !important; // Padding only at the bottom for spacing
+    margin-bottom: 1.5rem !important;
+    position: relative;
+    border-bottom: 1px solid var(--border-color) !important;
+    
+    // Remove Professional accent line
+    &::before {
+      display: none;
+    }
+    
+    h1, .page-title {
+      color: var(--heading-color) !important;
+      font-weight: var(--font-weight-bold) !important;
+      font-size: 2rem !important;
+      margin-bottom: 0 !important;
+      text-shadow: none !important;
+    }
+    
+    .page-subtitle,
+    .workspace-subtitle {
+      color: var(--text-muted) !important;
+      font-size: var(--font-size-base) !important;
+      font-weight: var(--font-weight-regular) !important;
+      margin-top: 0.25rem !important;
+      margin-bottom: 0 !important;
+    }
+    
+    .btn {
+      margin-right: 12px;
+      margin-bottom: 8px;
+    }
+  }
+
+  // ======================================
+  // CONTENT SECTIONS - PROFESSIONAL CARDS
+  // ======================================
   
-  // Page header
-  .page-head {
-    background: transparent;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 1.5rem;
+  .section,
+  .widget,
+  .dashboard-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: var(--shadow-md) !important;
+    margin-bottom: 2rem !important;
+    transition: var(--transition) !important;
+    overflow: hidden;
     
-    .page-title {
-      color: var(--heading-color);
-      font-weight: var(--font-weight-bold, 700);
-      font-size: 1.5rem;
-      margin: 0;
+    &:hover {
+      border-color: var(--primary) !important;
+      box-shadow: var(--shadow-lg) !important;
+      transform: translateY(-2px);
     }
     
-    .page-subtitle {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
+    .section-header {
+      background: var(--gradient-surface) !important;
+      border-bottom: 1px solid var(--border-color) !important;
+      padding: 1.5rem 2rem !important;
+      
+      h2, h3, .section-title {
+        color: var(--heading-color) !important;
+        font-weight: var(--font-weight-semibold) !important;
+        margin: 0 !important;
+        font-size: var(--font-size-lg) !important;
+      }
     }
     
-    .page-actions {
-      .btn {
-        margin-left: 0.5rem;
+    .section-body {
+      padding: 2rem !important;
+    }
+  }
+
+  // ======================================
+  // WORKSPACE SPECIFIC STYLING
+  // ======================================
+  
+  .workspace-body {
+    .shortcut-widget {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+      
+      &:hover {
+        border-color: var(--primary);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-4px);
+      }
+      
+      .shortcut-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: white;
+        font-size: 1.5rem;
+      }
+      
+      .shortcut-label {
+        color: var(--heading-color);
+        font-weight: var(--font-weight-semibold);
+        font-size: var(--font-size-sm);
+      }
+    }
+    
+    .number-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient-accent);
+      }
+      
+      .number {
+        font-size: 2.5rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      
+      .number-label {
+        color: var(--text-muted);
+        font-weight: var(--font-weight-medium);
+        text-transform: uppercase;
+        font-size: var(--font-size-xs);
+        letter-spacing: 0.5px;
       }
     }
   }
+
+  // ======================================
+  // RESPONSIVE DESIGN
+  // ======================================
   
-  // Cards and containers
-  .frappe-card,
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    
-    &:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary);
+  @media (max-width: 768px) {
+    .page-container,
+    .workspace-container,
+    .main-section {
+      padding: 1rem !important;
     }
     
-    .card-header {
-      background: var(--surface-bg);
-      border-bottom: 1px solid var(--border-color);
-      padding: 1rem 1.5rem;
-      font-weight: var(--font-weight-semibold, 600);
-      color: var(--heading-color);
+    .page-head,
+    .workspace-head {
+      padding: 1.5rem !important;
+      
+      h1, .page-title {
+        font-size: 1.5rem !important;
+      }
     }
     
-    .card-body {
-      padding: 1.5rem;
-      color: var(--text-color);
-    }
-  }
-  
-  // Module cards
-  .module-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-xl);
-    padding: 1.5rem;
-    text-align: center;
-    transition: var(--transition);
-    cursor: pointer;
-    
-    &:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
-      border-color: var(--primary);
-    }
-    
-    .module-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--primary);
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      color: white;
-      font-size: 1.5rem;
-    }
-    
-    .module-name {
-      color: var(--heading-color);
-      font-weight: var(--font-weight-semibold, 600);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .module-description {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-  }
-  
-  // Lists and tables
-  .list-row {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    margin-bottom: 0.5rem;
-    padding: 1rem;
-    transition: var(--transition);
-    
-    &:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary);
-    }
-  }
-  
-  .table {
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    
-    thead th {
-      background: var(--surface-bg);
-      color: var(--heading-color);
-      font-weight: var(--font-weight-semibold, 600);
-      border-bottom: 1px solid var(--border-color);
-      padding: 1rem;
-    }
-    
-    tbody td {
-      color: var(--text-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.75rem 1rem;
-    }
-    
-    tbody tr:hover {
-      background: var(--hover-bg);
+    .section,
+    .widget,
+    .dashboard-card {
+      margin-bottom: 1rem !important;
+      
+      .section-body {
+        padding: 1.5rem !important;
+      }
     }
   }
 }

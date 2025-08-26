@@ -230,7 +230,12 @@ body.sidebar-open {
   z-index: 2;
 }
 
-
+[data-theme="ramc"] .navbar-brand .app-logo {
+  max-height: 50px !important;
+  width: auto !important;
+  filter: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
 
 [data-theme="ramc"] .navbar-brand .app-logo:hover {
   transform: scale(1.05) !important;
@@ -820,7 +825,4 @@ body.sidebar-open {
 
 .sr-only.sr-only-focusable.btn.btn-primary-light.my-2 {
     display: none !important;
-}
-.visually-hidden {
-    display: none !important
 }

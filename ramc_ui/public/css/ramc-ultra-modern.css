@@ -1,0 +1,292 @@
+/*!
+ * RAMC Ultra-Modern Aviation Theme
+ * Professional Aviation Management Interface
+ * Version: 4.0.0 - ULTRA MODERN
+ */
+
+/* ===========================
+   ULTRA-MODERN AVIATION COLORS
+   ========================== */
+:root {
+  /* Primary Aviation Colors */
+  --aviation-navy: #0B1426;        /* Deep aviation navy */
+  --aviation-blue: #1B365D;        /* Professional aviation blue */
+  --aviation-sky: #2563EB;         /* Clear sky blue */
+  --aviation-gold: #F59E0B;        /* Aviation gold accent */
+  --aviation-silver: #94A3B8;      /* Modern silver */
+  
+  /* Ultra-Modern Gradients */
+  --gradient-primary: linear-gradient(135deg, #0B1426 0%, #1B365D 50%, #2563EB 100%);
+  --gradient-accent: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  --gradient-surface: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+  --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+  
+  /* Modern Background System */
+  --bg-primary: #F1F5F9;          /* Ultra-light blue-gray */
+  --bg-secondary: #E2E8F0;        /* Light surface */
+  --bg-card: #FFFFFF;             /* Pure white cards */
+  --bg-accent: #EFF6FF;           /* Light blue accent */
+  
+  /* Text & Content */
+  --text-primary: #0F172A;        /* Deep slate */
+  --text-secondary: #334155;      /* Medium slate */
+  --text-muted: #64748B;          /* Muted text */
+  --text-accent: var(--aviation-gold);
+  
+  /* Interactive States */
+  --hover-bg: #E2E8F0;
+  --active-bg: var(--aviation-sky);
+  --focus-ring: rgba(37, 99, 235, 0.2);
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 1px 2px 0 rgba(11, 20, 38, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(11, 20, 38, 0.1), 0 2px 4px -1px rgba(11, 20, 38, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(11, 20, 38, 0.1), 0 4px 6px -2px rgba(11, 20, 38, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(11, 20, 38, 0.1), 0 10px 10px -5px rgba(11, 20, 38, 0.04);
+  
+  /* Modern Radius */
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  
+  /* Transitions */
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ===========================
+   GLOBAL THEME APPLICATION
+   ========================== */
+[data-theme="ramc"] {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+}
+
+[data-theme="ramc"] body {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===========================
+   ULTRA-MODERN NAVBAR
+   ========================== */
+[data-theme="ramc"] .navbar {
+  background: var(--gradient-primary) !important;
+  backdrop-filter: blur(20px);
+  border: none !important;
+  border-bottom: 2px solid var(--aviation-gold) !important;
+  box-shadow: var(--shadow-lg) !important;
+  padding: 1rem 2rem !important;
+  min-height: 72px !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+[data-theme="ramc"] .navbar * {
+  color: #FFFFFF !important;
+}
+
+[data-theme="ramc"] .navbar .navbar-brand img {
+  max-height: 40px !important;
+  filter: brightness(0) invert(1) !important;
+  transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .navbar .navbar-brand img:hover {
+  transform: scale(1.05) !important;
+  filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(245, 158, 11, 0.6)) !important;
+}
+
+/* ===========================
+   CLEAN SEARCH BAR
+   ========================== */
+[data-theme="ramc"] .navbar .search-bar,
+[data-theme="ramc"] .navbar .form-control,
+[data-theme="ramc"] .navbar input[type="search"] {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: var(--radius) !important;
+  color: #FFFFFF !important;
+  font-size: 14px !important;
+  padding: 10px 16px !important;
+  transition: var(--transition) !important;
+  width: 100% !important;
+  max-width: 380px !important;
+}
+
+[data-theme="ramc"] .navbar .search-bar::placeholder,
+[data-theme="ramc"] .navbar .form-control::placeholder,
+[data-theme="ramc"] .navbar input[type="search"]::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+[data-theme="ramc"] .navbar .search-bar:hover,
+[data-theme="ramc"] .navbar .form-control:hover,
+[data-theme="ramc"] .navbar input[type="search"]:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: var(--aviation-gold) !important;
+}
+
+[data-theme="ramc"] .navbar .search-bar:focus,
+[data-theme="ramc"] .navbar .form-control:focus,
+[data-theme="ramc"] .navbar input[type="search"]:focus {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--aviation-gold) !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2) !important;
+  outline: none !important;
+}
+
+[data-theme="ramc"] .navbar .search-bar:focus::placeholder,
+[data-theme="ramc"] .navbar .form-control:focus::placeholder,
+[data-theme="ramc"] .navbar input[type="search"]:focus::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* ===========================
+   DROPDOWN MENUS (UNIFIED)
+   ========================== */
+[data-theme="ramc"] .dropdown-menu,
+[data-theme="ramc"] .awesomplete > ul {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-xl) !important;
+  padding: 8px !important;
+  margin-top: 8px !important;
+  animation: dropdownFade 0.2s ease-out !important;
+}
+
+[data-theme="ramc"] .dropdown-item,
+[data-theme="ramc"] .awesomplete > ul > li {
+  background: transparent !important;
+  border: none !important;
+  border-radius: var(--radius) !important;
+  color: var(--text-primary) !important;
+  font-size: 14px !important;
+  margin: 2px 0 !important;
+  padding: 10px 16px !important;
+  transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .dropdown-item:hover,
+[data-theme="ramc"] .dropdown-item:focus,
+[data-theme="ramc"] .awesomplete > ul > li:hover,
+[data-theme="ramc"] .awesomplete > ul > li[aria-selected="true"] {
+  background: var(--gradient-accent) !important;
+  color: var(--aviation-navy) !important;
+  transform: translateX(4px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* ===========================
+   MODERN SIDEBAR
+   ========================== */
+[data-theme="ramc"] .layout-side-section,
+[data-theme="ramc"] .sidebar {
+  background: var(--gradient-card) !important;
+  border-right: 2px solid var(--aviation-gold) !important;
+  box-shadow: var(--shadow-md) !important;
+  min-height: calc(100vh - 72px) !important;
+}
+
+[data-theme="ramc"] .sidebar-item {
+  border-radius: var(--radius) !important;
+  margin: 4px 12px !important;
+  transition: var(--transition-smooth) !important;
+}
+
+[data-theme="ramc"] .sidebar-item:hover {
+  background: var(--bg-accent) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transform: translateX(6px) !important;
+}
+
+[data-theme="ramc"] .sidebar-item.selected,
+[data-theme="ramc"] .sidebar-item.active {
+  background: var(--gradient-accent) !important;
+  box-shadow: var(--shadow-md) !important;
+  color: var(--aviation-navy) !important;
+}
+
+/* ===========================
+   MODERN CONTENT CARDS
+   ========================== */
+[data-theme="ramc"] .frappe-card,
+[data-theme="ramc"] .card,
+[data-theme="ramc"] .widget {
+  background: var(--bg-card) !important;
+  border: 1px solid rgba(245, 158, 11, 0.1) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  margin-bottom: 24px !important;
+  transition: var(--transition) !important;
+}
+
+[data-theme="ramc"] .frappe-card:hover,
+[data-theme="ramc"] .card:hover,
+[data-theme="ramc"] .widget:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ===========================
+   PROFESSIONAL TABLES
+   ========================== */
+[data-theme="ramc"] .datatable,
+[data-theme="ramc"] table {
+  background: var(--bg-card) !important;
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(245, 158, 11, 0.1) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-theme="ramc"] .datatable-header,
+[data-theme="ramc"] thead th {
+  background: var(--gradient-primary) !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  padding: 16px !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  letter-spacing: 0.5px !important;
+}
+
+[data-theme="ramc"] .datatable-row:hover,
+[data-theme="ramc"] tbody tr:hover {
+  background: var(--bg-accent) !important;
+  transform: scale(1.001) !important;
+}
+
+/* ===========================
+   ANIMATIONS
+   ========================== */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   ========================== */
+@media (max-width: 768px) {
+  [data-theme="ramc"] .navbar {
+    padding: 1rem !important;
+    min-height: 64px !important;
+  }
+  
+  [data-theme="ramc"] .navbar .search-bar {
+    max-width: 280px !important;
+  }
+}

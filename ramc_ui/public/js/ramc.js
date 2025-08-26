@@ -1,288 +1,268 @@
 /*!
  * RAMC Aviation Theme - Clean JavaScript
- * Mobile Sidebar & Enhanced Interactions
- * Version: 3.0 - No Conflicts, Bootstrap Compatible
+ * Working with Frappe's existing classes and structure
+ * Version: 6.0.0 - CONSOLIDATED & REFACTORED
  */
 
 (function() {
     'use strict';
     
-    // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('🛩️ RAMC Theme: Initializing...');
-        initializeRAMCTheme();
+        console.log('🛩️ RAMC Consolidated Theme: Initializing...');
+        initializeConsolidatedTheme();
     });
     
-    function initializeRAMCTheme() {
-        setupMobileSidebar();
-        setupSearchEnhancements();
-        setupAccessibility();
-        console.log('✅ RAMC Theme: Ready');
+    function initializeConsolidatedTheme() {
+        enhanceExistingElements();
+        setupCleanInteractions();
+        setupAnimations();
+        setupTooltips();
+        setupProperAccessibility();
+        setupResizableTables();
+        console.log('✅ RAMC Consolidated Theme: Ready');
     }
     
     // ================================================
-    // MOBILE SIDEBAR FUNCTIONALITY
+    // RESIZABLE TABLES INITIALIZATION (FRAPPE NATIVE)
     // ================================================
-    
-    function setupMobileSidebar() {
-        // Only create mobile elements on small screens
-        if (window.innerWidth <= 768) {
-            createMobileElements();
-        }
+
+    function setupResizableTables() {
+        // Monkey-patch the refresh method of ListView
+        const original_refresh = frappe.views.ListView.prototype.refresh;
         
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth <= 768) {
-                if (!document.querySelector('.sidebar-toggle')) {
-                    createMobileElements();
+        frappe.views.ListView.prototype.refresh = function() {
+            original_refresh.apply(this, arguments);
+            
+            // Use a more reliable way to wait for the table to be ready
+            const check_for_table = setInterval(() => {
+                const list_view_table = this.wrapper.find('.frappe-list .table-bordered');
+                if (list_view_table.length) {
+                    clearInterval(check_for_table);
+                    if (typeof makeTableResizable === 'function') {
+                        makeTableResizable(list_view_table[0]);
+                    }
                 }
-            } else {
-                removeMobileElements();
-            }
-        });
-    }
-    
-    function createMobileElements() {
-        // Create toggle button
-        if (!document.querySelector('.sidebar-toggle')) {
-            const toggle = document.createElement('button');
-            toggle.className = 'sidebar-toggle';
-            toggle.innerHTML = '☰';
-            toggle.setAttribute('aria-label', 'Toggle Sidebar');
-            toggle.addEventListener('click', toggleMobileSidebar);
-            document.body.appendChild(toggle);
-        }
-        
-        // Create overlay
-        if (!document.querySelector('.sidebar-overlay')) {
-            const overlay = document.createElement('div');
-            overlay.className = 'sidebar-overlay';
-            overlay.addEventListener('click', closeMobileSidebar);
-            document.body.appendChild(overlay);
-        }
-    }
-    
-    function removeMobileElements() {
-        const toggle = document.querySelector('.sidebar-toggle');
-        const overlay = document.querySelector('.sidebar-overlay');
-        if (toggle) toggle.remove();
-        if (overlay) overlay.remove();
-        
-        const sidebar = document.querySelector('.desk-sidebar');
-        if (sidebar) sidebar.classList.remove('mobile-open');
-        document.body.classList.remove('sidebar-open');
-    }
-    
-    function toggleMobileSidebar() {
-        const sidebar = document.querySelector('.desk-sidebar');
-        if (sidebar) {
-            if (sidebar.classList.contains('mobile-open')) {
-                closeMobileSidebar();
-            } else {
-                openMobileSidebar();
-            }
-        }
-    }
-    
-    function openMobileSidebar() {
-        const sidebar = document.querySelector('.desk-sidebar');
-        const overlay = document.querySelector('.sidebar-overlay');
-        
-        if (sidebar && overlay) {
-            sidebar.classList.add('mobile-open');
-            overlay.classList.add('active');
-            document.body.classList.add('sidebar-open');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-    
-    function closeMobileSidebar() {
-        const sidebar = document.querySelector('.desk-sidebar');
-        const overlay = document.querySelector('.sidebar-overlay');
-        
-        if (sidebar && overlay) {
-            sidebar.classList.remove('mobile-open');
-            overlay.classList.remove('active');
-            document.body.classList.remove('sidebar-open');
-            document.body.style.overflow = '';
-        }
+            }, 100); // Check every 100ms
+
+            // Fallback to clear the interval after a few seconds
+            setTimeout(() => clearInterval(check_for_table), 3000);
+        };
     }
     
     // ================================================
-    // SEARCH ENHANCEMENTS
+    // ENHANCE EXISTING FRAPPE ELEMENTS
     // ================================================
     
-    function setupSearchEnhancements() {
-        // Find all search inputs using different possible selectors
-        const searchSelectors = [
-            '.navbar .search-bar input',
-            '.global-search input',
-            'input[placeholder*="Search"]',
-            'input[placeholder*="search"]'
-        ];
+    function enhanceExistingElements() {
+        // Work with existing sidebar toggle
+        const sidebarToggle = document.querySelector('.sidebar-toggle-btn');
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', function() {
+                document.body.classList.toggle('sidebar-open');
+            });
+        }
         
-        searchSelectors.forEach(selector => {
-            const inputs = document.querySelectorAll(selector);
-            inputs.forEach(function(input) {
-                // Add enhanced focus effects
-                input.addEventListener('focus', function() {
-                    const parent = this.closest('.search-bar, .global-search') || this.parentElement;
-                    parent.classList.add('search-focused');
-                });
-                
-                input.addEventListener('blur', function() {
-                    const parent = this.closest('.search-bar, .global-search') || this.parentElement;
-                    parent.classList.remove('search-focused');
-                });
+        // Enhance existing search functionality
+        const searchInputs = document.querySelectorAll('.navbar input[type="search"], .global-search input');
+        searchInputs.forEach(input => {
+            const parent = input.parentElement;
+            input.addEventListener('focus', () => parent.classList.add('search-focused'));
+            input.addEventListener('blur', () => parent.classList.remove('search-focused'));
+            input.addEventListener('input', () => {
+                if (input.value.length > 0) {
+                    parent.classList.add('has-content');
+                } else {
+                    parent.classList.remove('has-content');
+                }
             });
         });
+        
+        // Enhance existing dropdown menus
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('mouseenter', () => item.classList.add('dropdown-item-hover-effect'));
+            item.addEventListener('mouseleave', () => item.classList.remove('dropdown-item-hover-effect'));
+        });
     }
     
     // ================================================
-    // ACCESSIBILITY ENHANCEMENTS
+    // CLEAN INTERACTIONS
     // ================================================
     
-    function setupAccessibility() {
-        // ESC key closes mobile sidebar
+    function setupCleanInteractions() {
+        // Card hover effects using existing classes
+        const cards = document.querySelectorAll('.frappe-card, .card, .widget');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => card.classList.add('card-hover-effect'));
+            card.addEventListener('mouseleave', () => card.classList.remove('card-hover-effect'));
+        });
+        
+        // Button interactions using existing classes
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                if (!button.disabled) button.classList.add('button-hover-effect');
+            });
+            button.addEventListener('mouseleave', () => button.classList.remove('button-hover-effect'));
+        });
+        
+        // List row interactions using existing classes
+        const listRows = document.querySelectorAll('.list-row');
+        listRows.forEach(row => {
+            row.addEventListener('mouseenter', () => row.classList.add('list-row-hover-effect'));
+            row.addEventListener('mouseleave', () => row.classList.remove('list-row-hover-effect'));
+        });
+    }
+
+    // ================================================
+    // ANIMATION ENHANCEMENTS
+    // ================================================
+    
+    function setupAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        const animatedElements = document.querySelectorAll('.card, .frappe-card, .list-row, .module-card');
+        animatedElements.forEach(el => observer.observe(el));
+    }
+
+    // ================================================
+    // TOOLTIP ENHANCEMENTS
+    // ================================================
+    
+    function setupTooltips() {
+        // Initialize Bootstrap tooltips if available
+        if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        }
+        
+        // Add custom tooltips for sidebar items
+        const sidebarItems = document.querySelectorAll('.standard-sidebar .list-link, .desk-sidebar .sidebar-item');
+        sidebarItems.forEach(function(item) {
+            const link = item.querySelector('a');
+            const text = (link || item).textContent.trim();
+            if (text && !item.getAttribute('title')) {
+                item.setAttribute('title', text);
+            }
+        });
+    }
+    
+    // ================================================
+    // PROPER ACCESSIBILITY
+    // ================================================
+    
+    function setupProperAccessibility() {
+        // ESC key handling
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                const sidebar = document.querySelector('.desk-sidebar');
-                if (sidebar && sidebar.classList.contains('mobile-open')) {
-                    closeMobileSidebar();
+                // Close mobile sidebar
+                if (document.body.classList.contains('sidebar-open')) {
+                    document.body.classList.remove('sidebar-open');
                 }
+                
+                // Close dropdowns
+                const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                openDropdowns.forEach(dropdown => dropdown.classList.remove('show'));
             }
         });
         
-        // Add proper ARIA labels
-        const navbar = document.querySelector('.navbar');
-        if (navbar && !navbar.getAttribute('role')) {
-            navbar.setAttribute('role', 'navigation');
-            navbar.setAttribute('aria-label', 'Main navigation');
-        }
+        // Focus management for dropdowns
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            if (!item.hasAttribute('tabindex')) {
+                item.setAttribute('tabindex', '0');
+            }
+            item.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
         
-        const sidebar = document.querySelector('.desk-sidebar');
-        if (sidebar && !sidebar.getAttribute('role')) {
-            sidebar.setAttribute('role', 'navigation');
-            sidebar.setAttribute('aria-label', 'Sidebar navigation');
-        }
+        // Proper ARIA labels for existing elements
+        const setAriaRole = (selector, role, label) => {
+            const elem = document.querySelector(selector);
+            if (elem && !elem.getAttribute('role')) {
+                elem.setAttribute('role', role);
+                if (label) elem.setAttribute('aria-label', label);
+            }
+        };
+        setAriaRole('.navbar', 'navigation', 'Main navigation');
+        setAriaRole('.layout-side-section, .desk-sidebar', 'navigation', 'Sidebar navigation');
     }
     
     // ================================================
     // PUBLIC API
     // ================================================
     
-    // Expose methods for external use
     window.RAMCTheme = {
-        toggleSidebar: toggleMobileSidebar,
-        openSidebar: openMobileSidebar,
-        closeSidebar: closeMobileSidebar,
-        init: initializeRAMCTheme
+        init: initializeConsolidatedTheme,
+        version: '6.0.0',
+        type: 'consolidated'
     };
     
 })();
 
 // ================================================
-// FRAPPE THEME INTEGRATION
+// FRAPPE INTEGRATION
 // ================================================
 
-// Extend Frappe's theme switcher if available
 if (typeof frappe !== 'undefined') {
     frappe.provide("ramc_ui");
     
-    // Enhanced theme switcher
-    frappe.ui.ThemeSwitcher = class RAMCThemeSwitcher extends frappe.ui.ThemeSwitcher {
-        fetch_themes() {
-            return new Promise((resolve) => {
-                this.themes = [
-                    {
-                        name: "light",
-                        label: __("Frappe Light"),
-                        info: __("Clean light theme"),
-                    },
-                    {
-                        name: "dark", 
-                        label: __("Timeless Night"),
-                        info: __("Professional dark theme"),
-                    },
-                    {
-                        name: "automatic",
-                        label: __("Automatic"),
-                        info: __("Follows system preference"),
-                    },
-                    {
-                        name: "ramc",
-                        label: __("RAMC Aviation"),
-                        info: __("World-class aviation theme"),
-                    },
-                ];
-                resolve(this.themes);
-            });
-        }
+    // Clean theme switcher integration
+    if (frappe.ui.ThemeSwitcher) {
+        const originalFetch = frappe.ui.ThemeSwitcher.prototype.fetch_themes;
         
-        toggle_theme(theme) {
-            this.current_theme = theme.toLowerCase();
-            document.documentElement.setAttribute("data-theme-mode", this.current_theme);
-            document.documentElement.setAttribute("data-theme", this.current_theme);
-            
-            // Handle branding
-            this.handle_aviation_branding(this.current_theme);
-            
-            frappe.show_alert({
-                message: __("Theme switched to {0}", [toTitle(theme)]),
-                indicator: 'green'
-            }, 3);
-            
-            // Persist theme choice
-            frappe.xcall("frappe.core.doctype.user.user.switch_theme", {
-                theme: toTitle(theme),
-            });
-        }
-        
-        handle_aviation_branding(theme) {
-            const navbar_logo = document.querySelector('.navbar-brand img');
-            
-            if (theme === 'ramc' && navbar_logo) {
-                // RAMC branding - make logo bigger and visible
-                navbar_logo.src = '/assets/ramc_ui/images/logos/ramc_main_light.png';
-                navbar_logo.style.maxHeight = '55px';
-                navbar_logo.style.width = 'auto';
-                navbar_logo.style.filter = 'brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))';
-                navbar_logo.setAttribute('alt', 'RAMC - Regional Aircraft Maintenance Centre');
+        frappe.ui.ThemeSwitcher.prototype.fetch_themes = function() {
+            return originalFetch.call(this).then((themes) => {
+                // Add RAMC theme to existing themes
+                const ramcTheme = {
+                    name: "ramc",
+                    label: __("RAMC Aviation"),
+                    info: __("Professional aviation management theme"),
+                };
                 
-                // Update page title
-                document.title = 'RAMC Aviation ERP - ' + (frappe.get_route_str() || 'Home');
-            } else if (navbar_logo) {
-                // Other themes - normal size
-                const logo_variant = (theme === 'dark') ? 'dark' : 'light';
-                navbar_logo.src = `/assets/ramc_ui/images/logos/ramc_main_${logo_variant}.png`;
-                navbar_logo.style.maxHeight = '40px';
-                navbar_logo.style.filter = 'none';
-            }
-        }
-    };
+                if (!themes.find(theme => theme.name === 'ramc')) {
+                    themes.push(ramcTheme);
+                }
+                
+                return themes;
+            });
+        };
+    }
     
-    // Initialize theme on load
+    // Clean initialization
     ramc_ui.init = function() {
-        console.log('🛩️ RAMC UI Theme Initialized');
+        console.log('🛩️ RAMC Consolidated Theme: Frappe Integration Ready');
         
         $(document).ready(function() {
-            // Setup dynamic branding
-            const current_theme = document.documentElement.getAttribute('data-theme') || 
-                                 document.documentElement.getAttribute('data-theme-mode') || 
-                                 'light';
-            
-            const theme_switcher = new frappe.ui.ThemeSwitcher();
-            theme_switcher.handle_aviation_branding(current_theme);
-            
-            // Watch for theme changes
+            // Handle theme switching
             const observer = new MutationObserver((mutations) => {
                 mutations.forEach((mutation) => {
                     if (mutation.type === 'attributes' && 
                         (mutation.attributeName === 'data-theme' || mutation.attributeName === 'data-theme-mode')) {
-                        const new_theme = document.documentElement.getAttribute('data-theme') || 
-                                         document.documentElement.getAttribute('data-theme-mode') || 
-                                         'light';
-                        theme_switcher.handle_aviation_branding(new_theme);
+                        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+                        
+                        if (theme === 'ramc') {
+                            // RAMC theme is active
+                            document.title = 'RAMC Aviation ERP - ' + (frappe.get_route_str() || 'Home');
+                        }
                     }
                 });
             });
@@ -296,10 +276,8 @@ if (typeof frappe !== 'undefined') {
     
     // Initialize
     ramc_ui.init();
-    
-    // Export for global access
     window.ramc_ui = ramc_ui;
 }
 
-console.log('%c✈️ RAMC Aviation Theme - Ready for Takeoff!', 
-            'background: linear-gradient(135deg, #0ea5e9, #22c55e); color: white; padding: 8px 12px; border-radius: 4px; font-weight: bold;');
+console.log('%c✈️ RAMC Consolidated Aviation Theme - Professional & Working!', 
+            'background: linear-gradient(135deg, #3b82f6, #f59e0b); color: white; padding: 8px 12px; border-radius: 6px; font-weight: 500;');

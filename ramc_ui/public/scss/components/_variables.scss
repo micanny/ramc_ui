@@ -1,0 +1,84 @@
+// RAMC Aviation Professional Variables
+// Dramatic light theme for aviation management
+
+:root {
+  // Primary Aviation Management Colors
+  --primary: #1e40af;           // Deep professional blue
+  --primary-light: #3b82f6;     // Lighter professional blue  
+  --primary-dark: #1e3a8a;      // Darker professional blue
+  
+  // Accent Colors
+  --accent: #f59e0b;            // Aviation amber/gold
+  --accent-light: #fbbf24;      // Light amber
+  --accent-dark: #d97706;       // Dark amber
+  
+  // Success & Status Colors
+  --success: #10b981;           // Professional green
+  --warning: #f59e0b;           // Professional amber
+  --danger: #ef4444;            // Professional red
+  --info: var(--primary);       // Use primary blue
+  
+  // Background Colors - Light Professional Theme
+  --body-bg: #f8fafc;           // Very light gray-blue
+  --surface-bg: #ffffff;        // Pure white for cards
+  --card-bg: #ffffff;           // White cards with shadows
+  --sidebar-bg: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  
+  // Text Colors - Professional Black/Dark
+  --text-color: #1e293b;        // Dark slate for primary text
+  --text-muted: #64748b;        // Muted slate for secondary text
+  --heading-color: #0f172a;     // Very dark slate for headings
+  
+  // Border & Divider Colors
+  --border-color: #e2e8f0;      // Light slate border
+  --divider-color: #cbd5e1;     // Medium slate divider
+  
+  // Interactive Colors
+  --hover-bg: #f1f5f9;          // Light hover background
+  --focus-color: var(--primary);
+  
+  // Gradients - Professional Aviation Theme
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  --gradient-surface: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  
+  // Shadows - Professional Depth
+  --shadow-sm: 0 2px 4px rgba(30, 41, 59, 0.08);
+  --shadow-md: 0 4px 12px rgba(30, 41, 59, 0.12);
+  --shadow-lg: 0 8px 25px rgba(30, 41, 59, 0.15);
+  --shadow-xl: 0 20px 40px rgba(30, 41, 59, 0.2);
+  
+  // Border Radius
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  // Transitions
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease-out;
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  // Typography
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  
+  // Font Weights
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  // Z-index scale
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}

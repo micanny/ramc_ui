@@ -1,0 +1,183 @@
+// RAMC Aviation Page Content
+// DRAMATIC PROFESSIONAL PAGE LAYOUTS
+
+[data-theme="ramc"] {
+  
+  // Main Page Container - DRAMATIC BACKGROUND
+  .page-container,
+  .layout-main,
+  .main-section,
+  .container-page {
+    background: $page-bg !important;
+    min-height: calc(100vh - 80px) !important;
+    padding: 2rem !important;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  // Page Headers - PROFESSIONAL STYLING
+  .page-head,
+  .page-title {
+    background: $gradient-surface !important;
+    border: 1px solid $border-color !important;
+    border-radius: $radius-lg !important;
+    padding: 1.5rem 2rem !important;
+    margin-bottom: 2rem !important;
+    box-shadow: $shadow-md !important;
+    position: relative;
+    z-index: 1;
+    
+    h1, h2, h3 {
+      color: $heading-color !important;
+      font-weight: $font-weight-bold !important;
+      margin: 0 !important;
+      font-size: 1.75rem !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
+    }
+    
+    .breadcrumb,
+    .page-breadcrumb {
+      background: transparent !important;
+      margin: 0.5rem 0 0 0 !important;
+      padding: 0 !important;
+      
+      .breadcrumb-item {
+        color: $text-muted !important;
+        font-weight: $font-weight-medium !important;
+        
+        &.active {
+          color: $accent !important;
+          font-weight: $font-weight-semibold !important;
+        }
+        
+        a {
+          color: $primary !important;
+          text-decoration: none !important;
+          transition: $transition !important;
+          
+          &:hover {
+            color: $accent !important;
+          }
+        }
+      }
+    }
+  }
+
+  // Content Cards - MODERN ELEVATED DESIGN
+  .card,
+  .widget,
+  .layout-card,
+  .form-layout {
+    background: $card-bg !important;
+    border: 1px solid $border-color !important;
+    border-radius: $radius-lg !important;
+    box-shadow: $shadow-md !important;
+    margin-bottom: 1.5rem !important;
+    overflow: hidden !important;
+    transition: $transition-smooth !important;
+    position: relative;
+    z-index: 1;
+    
+    &:hover {
+      box-shadow: $shadow-lg !important;
+      transform: translateY(-2px) !important;
+      border-color: rgba(30, 64, 175, 0.2) !important;
+    }
+    
+    .card-header,
+    .widget-header {
+      background: linear-gradient(135deg, $surface-bg 0%, rgba(241, 245, 249, 0.8) 100%) !important;
+      border-bottom: 1px solid $border-color !important;
+      padding: 1.25rem 1.5rem !important;
+      font-weight: $font-weight-semibold !important;
+      color: $heading-color !important;
+      font-size: 1.1rem !important;
+    }
+    
+    .card-body,
+    .widget-body {
+      padding: 1.5rem !important;
+    }
+  }
+
+  // Section Dividers
+  .section,
+  .form-section {
+    margin-bottom: 2rem !important;
+    
+    .section-head,
+    .form-section-head {
+      border-bottom: 2px solid $accent !important;
+      padding-bottom: 0.75rem !important;
+      margin-bottom: 1.5rem !important;
+      
+      h3, h4 {
+        color: $heading-color !important;
+        font-weight: $font-weight-bold !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        font-size: 1.1rem !important;
+        margin: 0 !important;
+      }
+    }
+  }
+
+  // Empty States - PROFESSIONAL MESSAGING
+  .empty-state,
+  .no-data-message {
+    text-align: center !important;
+    padding: 3rem 2rem !important;
+    background: $gradient-surface !important;
+    border-radius: $radius-lg !important;
+    border: 1px solid $border-color !important;
+    margin: 2rem 0 !important;
+    
+    .empty-state-icon {
+      font-size: 3rem !important;
+      color: $text-muted !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .empty-state-title {
+      color: $heading-color !important;
+      font-weight: $font-weight-semibold !important;
+      font-size: 1.25rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .empty-state-message {
+      color: $text-muted !important;
+      font-size: 0.95rem !important;
+      line-height: 1.6 !important;
+    }
+  }
+
+  // Loading States
+  .loading-state,
+  .page-loading {
+    background: $gradient-surface !important;
+    border-radius: $radius-lg !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    border: 1px solid $border-color !important;
+    
+    .loading-text {
+      color: $text-muted !important;
+      font-weight: $font-weight-medium !important;
+      margin-top: 1rem !important;
+    }
+  }
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMC Aviation - Professional Management Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="ramc_ui/public/css/ramc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #f8fafc;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .feature-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-demo {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            position: relative;
+        }
+        .navbar-demo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+            pointer-events: none;
+            border-radius: 12px;
+        }
+        .search-demo {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 12px 20px;
+            color: white;
+            width: 300px;
+            margin: 1rem 0;
+        }
+        .search-demo::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .dropdown-demo {
+            background: rgba(30, 41, 59, 0.98);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 12px;
+            padding: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        .dropdown-item-demo {
+            color: rgba(255, 255, 255, 0.9);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .dropdown-item-demo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #124191 100%);
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+            border-radius: 8px;
+        }
+        .dropdown-item-demo:hover::before {
+            left: 0;
+        }
+        .dropdown-item-demo:hover {
+            color: #111827;
+            transform: translateX(6px);
+        }
+        .dropdown-item-demo > div {
+            position: relative;
+            z-index: 1;
+        }
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .color-swatch {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .primary { background: #124191; }
+        .primary-light { background: #1e40af; }
+        .primary-dark { background: #0f3460; }
+        .navbar-bg { background: #1e293b; }
+        .navbar-bg-light { background: #334155; }
+        .accent { background: #f59e0b; }
+        .accent-light { background: #fbbf24; }
+        .success { background: #059669; }
+        .warning { background: #d97706; }
+        .danger { background: #dc2626; }
+        .hero-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(245, 158, 11, 0.1) 0%, rgba(18, 65, 145, 0.1) 100%);
+            animation: shimmer 3s ease-in-out infinite alternate;
+        }
+        @keyframes shimmer {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .btn-aviation {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            border: none;
+            color: #111827;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-aviation:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+            color: #111827;
+        }
+    </style>
+</head>
+<body data-theme="ramc">
+    <div class="demo-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="display-4 fw-bold mb-4">RAMC Aviation Management</h1>
+            <p class="lead mb-4">Professional ERP Interface with Modern Aviation Aesthetics</p>
+            <button class="btn btn-aviation">Experience the Interface</button>
+        </div>
+
+        <!-- Professional Color Palette -->
+        <div class="feature-section">
+            <h2 class="h3 mb-4">🎨 Professional Aviation Color Palette</h2>
+            <p class="mb-4">Carefully selected colors that convey professionalism, reliability, and modern aviation management.</p>
+            <div class="color-palette">
+                <div class="color-swatch primary">Primary<br>#124191</div>
+                <div class="color-swatch primary-light">Primary Light<br>#1e40af</div>
+                <div class="color-swatch navbar-bg">Navbar<br>#1e293b</div>
+                <div class="color-swatch navbar-bg-light">Navbar Light<br>#334155</div>
+                <div class="color-swatch accent">Aviation Gold<br>#f59e0b</div>
+                <div class="color-swatch accent-light">Light Gold<br>#fbbf24</div>
+                <div class="color-swatch success">Success<br>#059669</div>
+                <div class="color-swatch warning">Warning<br>#d97706</div>
+                <div class="color-swatch danger">Danger<br>#dc2626</div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar Demo -->
+        <div class="feature-section">
+            <h2 class="h3 mb-4">🧭 Professional Navigation Bar</h2>
+            <p class="mb-4">Dark slate navbar with aviation gold accents and professional gradients.</p>
+            <div class="navbar-demo">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <h5 class="mb-0 text-white fw-bold">RAMC Aviation</h5>
+                        <nav class="ms-4">
+                            <a href="#" class="text-white text-decoration-none mx-3">Dashboard</a>
+                            <a href="#" class="text-white text-decoration-none mx-3">Fleet</a>
+                            <a href="#" class="text-white text-decoration-none mx-3">Operations</a>
+                        </nav>
+                    </div>
+                    <div>
+                        <input type="text" class="search-demo" placeholder="Search or type a command (Ctrl + G)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Dropdown Demo -->
+        <div class="feature-section">
+            <h2 class="h3 mb-4">🔍 Enhanced Search Dropdown</h2>
+            <p class="mb-4">Professional dark dropdown with smooth gradient hover animations and excellent contrast.</p>
+            <div class="dropdown-demo" style="max-width: 350px;">
+                <div class="dropdown-item-demo">
+                    <div>
+                        <strong>User Management</strong><br>
+                        <small style="color: rgba(255, 255, 255, 0.6);">Manage system users and permissions</small>
+                    </div>
+                </div>
+                <div class="dropdown-item-demo">
+                    <div>
+                        <strong>Flight Operations</strong><br>
+                        <small style="color: rgba(255, 255, 255, 0.6);">Track flights and operational data</small>
+                    </div>
+                </div>
+                <div class="dropdown-item-demo">
+                    <div>
+                        <strong>Aircraft Maintenance</strong><br>
+                        <small style="color: rgba(255, 255, 255, 0.6);">Schedule and track maintenance</small>
+                    </div>
+                </div>
+                <div class="dropdown-item-demo">
+                    <div>
+                        <strong>Financial Reports</strong><br>
+                        <small style="color: rgba(255, 255, 255, 0.6);">Generate financial analytics</small>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-3 text-muted"><em>Hover over the items to see the smooth gradient animation</em></p>
+        </div>
+
+        <!-- Key Features -->
+        <div class="feature-section">
+            <h2 class="h3 mb-4">✨ Key Professional Features</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5>🎯 Manager-Focused Design</h5>
+                    <p>Professional slate and navy colors that convey authority and reliability, perfect for aviation management systems.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>🔧 Perfect Integration</h5>
+                    <p>Hamburger menu properly integrated with sidebar, no messy separate components or layout conflicts.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>🎨 Stunning Animations</h5>
+                    <p>Smooth gradient hover effects using cubic-bezier transitions for a premium feel.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>📱 Clean SCSS Architecture</h5>
+                    <p>Modular SCSS components with proper variable management and no conflicts.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="feature-section">
+            <h2 class="h3 mb-4">⚙️ Technical Implementation</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Search Dropdown</h6>
+                    <ul class="list-unstyled small text-muted">
+                        <li>✅ Awesomplete styling fixed</li>
+                        <li>✅ Professional dark theme</li>
+                        <li>✅ Smooth hover animations</li>
+                        <li>✅ High contrast readability</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Navigation</h6>
+                    <ul class="list-unstyled small text-muted">
+                        <li>✅ Slate gradient background</li>
+                        <li>✅ Aviation gold accents</li>
+                        <li>✅ Proper white text contrast</li>
+                        <li>✅ Responsive mobile design</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Components</h6>
+                    <ul class="list-unstyled small text-muted">
+                        <li>✅ SCSS modular architecture</li>
+                        <li>✅ Professional color variables</li>
+                        <li>✅ No component conflicts</li>
+                        <li>✅ Clean sidebar integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center py-4">
+            <p class="text-muted">
+                <strong>RAMC Aviation Theme v3.0</strong> - Professional Management Interface<br>
+                <small>Designed for aviation industry managers who demand excellence</small>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive demo functionality
+        document.querySelectorAll('.dropdown-item-demo').forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.querySelector('strong').textContent;
+                alert(`Opening ${title} module...`);
+            });
+        });
+
+        // Search demo
+        document.querySelector('.search-demo').addEventListener('focus', function() {
+            this.style.background = 'rgba(255, 255, 255, 0.12)';
+            this.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+            this.style.boxShadow = '0 0 20px rgba(245, 158, 11, 0.15)';
+        });
+
+        document.querySelector('.search-demo').addEventListener('blur', function() {
+            this.style.background = 'rgba(255, 255, 255, 0.08)';
+            this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            this.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>

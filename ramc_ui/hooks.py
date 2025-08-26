@@ -26,7 +26,10 @@ add_to_apps_screen = [
 
 # include js, css files in header of desk.html
 app_include_css = ["/assets/ramc_ui/css/ramc.css"]
-app_include_js = ["/assets/ramc_ui/js/ramc.js"]
+app_include_js = [
+    "/assets/ramc_ui/js/resizable-tables.js",
+    "/assets/ramc_ui/js/ramc.js"
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/ramc_ui/css/ramc_ui.css"
@@ -241,4 +244,10 @@ override_whitelisted_methods = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+doc_events = {
+    "Employee": {
+        "autoname": "ramc_ui.overrides.employee_autoname.employee_autoname"
+    }
+}
 

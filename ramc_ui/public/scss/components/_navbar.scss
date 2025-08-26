@@ -1,44 +1,196 @@
-// RAMC Aviation Navbar - COOL MODERN STYLE
+// RAMC Aviation Navbar Component
+// Professional dramatic light theme with black fonts
+
 [data-theme="ramc"] {
   .navbar {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
-    border-bottom: 3px solid var(--accent) !important;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
-    padding: 1rem;
-    min-height: 70px;
-    
-    .navbar-brand {
-      img {
-        max-height: 40px;
-        filter: brightness(0) invert(1);
-        transition: var(--transition);
-        
-        &:hover {
-          transform: scale(1.1) rotate(2deg);
-        }
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%) !important;
+    border-bottom: 3px solid var(--primary) !important;
+    box-shadow: var(--shadow-lg);
+    padding: 1rem 1.5rem;
+    min-height: 80px;
+    position: relative;
+
+    // Professional aviation accent stripe
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent);
+    }
+
+    .navbar-brand img {
+      max-height: 45px;
+      filter: brightness(0) saturate(100%);
+      transition: var(--transition);
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(0) saturate(100%) drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
       }
     }
-    
-    .navbar-nav {
-      .nav-link {
+
+    .navbar-nav .nav-link {
+      color: var(--text-color) !important;
+      font-weight: var(--font-weight-semibold);
+      margin: 0 8px;
+      padding: 12px 20px;
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+      font-size: var(--font-size-sm);
+      position: relative;
+      background: transparent;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--gradient-primary);
+        opacity: 0;
+        border-radius: var(--radius-lg);
+        transition: var(--transition);
+        z-index: -1;
+      }
+
+      &:hover {
         color: white !important;
-        font-weight: 600;
-        margin: 0 8px;
-        padding: 10px 20px;
-        border-radius: 12px;
-        transition: var(--transition);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        font-size: 0.85rem;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
         
-        &:hover {
-          background: linear-gradient(135deg, var(--accent), var(--accent-light));
-          color: var(--text-color) !important;
-          transform: translateY(-3px);
-          box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+        &::before {
+          opacity: 1;
         }
       }
     }
+
+    // FIXED: Search Bar Visibility - Dramatic Professional Styling
+    .search-bar {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+      border: 2px solid var(--border-color) !important;
+      border-radius: 25px !important;
+      transition: var(--transition);
+      overflow: hidden;
+      max-width: 450px;
+      min-width: 350px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+
+      // Professional hover effect
+      &:hover {
+        border-color: var(--primary) !important;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-1px);
+      }
+
+      &:focus-within {
+        border-color: var(--primary) !important;
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1), var(--shadow-lg);
+      }
+
+      input {
+        background: transparent !important;
+        border: none !important;
+        color: var(--text-color) !important;
+        padding: 15px 24px !important;
+        font-size: var(--font-size-sm) !important;
+        font-weight: var(--font-weight-medium);
+        width: 100%;
+        
+        &::placeholder {
+          color: var(--text-muted) !important;
+          font-weight: var(--font-weight-normal);
+        }
+
+        &:focus {
+          outline: none !important;
+          color: var(--text-color) !important;
+        }
+      }
+
+      .search-icon {
+        color: var(--text-muted) !important;
+        padding: 0 20px;
+        transition: var(--transition);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+
+      &:hover .search-icon,
+      &:focus-within .search-icon {
+        color: var(--primary) !important;
+      }
+    }
+
+    // Professional dropdown menus
+    .dropdown-menu {
+      background: var(--card-bg) !important;
+      backdrop-filter: blur(20px) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-xl) !important;
+      box-shadow: var(--shadow-xl) !important;
+      padding: 12px !important;
+      margin-top: 8px !important;
+    }
+
+    .dropdown-item {
+      color: var(--text-color) !important;
+      padding: 12px 18px !important;
+      border-radius: var(--radius-md) !important;
+      margin: 4px 0 !important;
+      transition: var(--transition) !important;
+      font-weight: var(--font-weight-medium);
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        right: 0;
+        bottom: 0;
+        background: var(--gradient-primary);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+      }
+
+      &:hover {
+        color: white !important;
+        transform: translateX(6px);
+        
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  // Mobile responsive
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.75rem 1rem;
+      min-height: 70px;
+      
+      .search-bar {
+        min-width: 280px;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .app-logo {
+    background-color: white;
+    padding: 5px; // Add some padding so the logo isn't right up against the edge
+    border-radius: var(--radius-md); // Optional: rounds the corners of the white background
+    height: 50px; // Increased height
+    width: auto; // Maintain aspect ratio
   }
 }

@@ -1,60 +1,95 @@
 // RAMC Aviation Theme Variables
-// Clean colors that work perfectly with black fonts
+// DRAMATIC PROFESSIONAL AVIATION MANAGEMENT COLORS
 
-// Primary Aviation Colors - Clean and Professional
-$ramc-primary: #2563eb;           // Clean blue that works with black text
-$ramc-primary-light: #3b82f6;    // Lighter blue
-$ramc-primary-dark: #1d4ed8;     // Darker blue
+// Core Brand Colors - Professional Navy & Aviation Gold
+$primary: #1e40af;          // Professional Navy Blue
+$primary-light: #3b82f6;    // Bright Blue
+$primary-dark: #1e3a8a;     // Dark Navy
 
-// Secondary Colors
-$ramc-accent: #f59e0b;           // Professional amber/gold
-$ramc-accent-light: #fbbf24;    // Light amber
-$ramc-accent-dark: #d97706;     // Dark amber
+// Accent Colors - Aviation Gold & Copper  
+$accent: #f59e0b;           // Aviation Gold
+$accent-light: #fcd34d;     // Light Gold
+$accent-dark: #d97706;      // Deep Gold
 
-// Neutral Colors - High Contrast for Readability
-$ramc-white: #ffffff;
-$ramc-gray-50: #f9fafb;
-$ramc-gray-100: #f3f4f6;
-$ramc-gray-200: #e5e7eb;
-$ramc-gray-300: #d1d5db;
-$ramc-gray-400: #9ca3af;
-$ramc-gray-500: #6b7280;
-$ramc-gray-600: #4b5563;
-$ramc-gray-700: #374151;
-$ramc-gray-800: #1f2937;
-$ramc-gray-900: #111827;
-$ramc-black: #000000;
+// Background System - Dramatic but Professional
+$bg-color: #f8fafc;         // Clean White Base
+$card-bg: #ffffff;          // Pure White Cards
+$surface-bg: #f1f5f9;      // Subtle Gray Surface
+$page-bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); // Gradient Background
 
-// Semantic Colors
-$ramc-success: #10b981;
-$ramc-warning: #f59e0b;
-$ramc-danger: #ef4444;
-$ramc-info: #3b82f6;
+// Text Colors - High Contrast for Readability
+$text-color: #0f172a;       // Deep Slate (Black-friendly)
+$text-muted: #475569;       // Medium Slate
+$heading-color: #1e293b;    // Dark Slate for Headers
 
-// Typography
-$ramc-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-$ramc-font-weight-normal: 400;
-$ramc-font-weight-medium: 500;
-$ramc-font-weight-semibold: 600;
-$ramc-font-weight-bold: 700;
+// Professional UI Colors
+$border-color: #cbd5e1;     // Professional Border
+$hover-bg: #e2e8f0;        // Clean Hover
+$shadow-color: rgba(15, 23, 42, 0.1); // Professional Shadow
 
-// Spacing
-$ramc-spacing-xs: 0.25rem;
-$ramc-spacing-sm: 0.5rem;
-$ramc-spacing-md: 1rem;
-$ramc-spacing-lg: 1.5rem;
-$ramc-spacing-xl: 2rem;
+// Aviation Status Colors
+$success: #059669;          // Professional Green
+$warning: #d97706;          // Aviation Orange
+$danger: #dc2626;           // Alert Red
+$info: #0284c7;            // Information Blue
 
-// Border Radius
-$ramc-radius-sm: 0.25rem;
-$ramc-radius-md: 0.5rem;
-$ramc-radius-lg: 0.75rem;
-$ramc-radius-xl: 1rem;
+// Enhanced Visual Elements
+$gradient-primary: linear-gradient(135deg, #{$primary}, #{$primary-light});
+$gradient-accent: linear-gradient(135deg, #{$accent}, #{$accent-light});
+$gradient-surface: linear-gradient(135deg, #{$card-bg} 0%, rgba(248, 250, 252, 0.8) 100%);
 
-// Shadows
-$ramc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$ramc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$ramc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+// Shadows for Depth
+$shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.08);
+$shadow-md: 0 4px 12px rgba(15, 23, 42, 0.12);
+$shadow-lg: 0 8px 25px rgba(15, 23, 42, 0.15);
+$shadow-xl: 0 20px 40px rgba(15, 23, 42, 0.2);
 
-// Transitions
-$ramc-transition: all 0.2s ease-in-out;
+// Spacing & Layout
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+$radius-xl: 18px;
+
+// Professional Typography
+$font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Smooth Professional Animations
+$transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-smooth: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+// CSS Custom Properties Export
+:root {
+  --primary: #{$primary};
+  --primary-light: #{$primary-light};
+  --primary-dark: #{$primary-dark};
+  --accent: #{$accent};
+  --accent-light: #{$accent-light};
+  --accent-dark: #{$accent-dark};
+  --bg-color: #{$bg-color};
+  --card-bg: #{$card-bg};
+  --surface-bg: #{$surface-bg};
+  --text-color: #{$text-color};
+  --text-muted: #{$text-muted};
+  --heading-color: #{$heading-color};
+  --border-color: #{$border-color};
+  --hover-bg: #{$hover-bg};
+  --success: #{$success};
+  --warning: #{$warning};
+  --danger: #{$danger};
+  --info: #{$info};
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --font-family: #{$font-family};
+  --transition: #{$transition};
+  --transition-smooth: #{$transition-smooth};
+}
